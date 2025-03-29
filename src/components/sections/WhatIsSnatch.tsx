@@ -2,7 +2,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { PartyPopper, Sparkles } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { Card } from '@/components/ui/card';
 
 const WhatIsSnatch: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -44,19 +43,17 @@ const WhatIsSnatch: React.FC = () => {
         
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className={`transition-all duration-700 delay-200 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <Card className="glass-morphism p-6 md:p-8">
-              <p className="text-white/90 text-lg mb-6">
-                Say goodbye to dull launches! Snatch!, born from SUTD's Project Nexus, is the ultimate tool for small businesses to throw unforgettable product launch parties.
-              </p>
-              <p className="text-white/90 text-lg">
-                We mix games, prizes, and a dash of urgency to make your brand the talk of the town.
-              </p>
-              
-              <div className="mt-8 flex items-center gap-3 float-animation">
-                <PartyPopper size={30} className="text-snatch-pink" />
-                <span className="text-white text-xl italic">Let's bring the party to your launch!</span>
-              </div>
-            </Card>
+            <p className="text-white/90 text-lg mb-6">
+              Say goodbye to dull launches! Snatch!, born from SUTD's Project Nexus, is the ultimate tool for small businesses to throw unforgettable product launch parties.
+            </p>
+            <p className="text-white/90 text-lg">
+              We mix games, prizes, and a dash of urgency to make your brand the talk of the town.
+            </p>
+            
+            <div className="mt-8 flex items-center gap-3 float-animation">
+              <PartyPopper size={30} className="text-snatch-pink" />
+              <span className="text-white text-xl italic">Let's bring the party to your launch!</span>
+            </div>
           </div>
           
           <div className={`relative transition-all duration-700 delay-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>

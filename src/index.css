@@ -98,25 +98,6 @@
   }
 }
 
-.wavy-divider {
-  position: relative;
-  height: 70px;
-  overflow: hidden;
-}
-
-.wavy-divider::before {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 40px;
-  background-image: 
-    radial-gradient(circle at 20px -10px, transparent 20px, #EC4899 20px);
-  background-size: 40px 40px;
-  background-position: center;
-}
-
 @layer components {
   .btn-cta {
     @apply bg-snatch-yellow text-snatch-darkpurple font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 hover:bg-opacity-90;
@@ -154,6 +135,23 @@
     left: 0;
     width: 100%;
     height: 100%;
+  }
+
+  .section-transition {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-transition::before {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to bottom, transparent, #3B0764);
+    transform: skewY(-2deg);
+    z-index: 1;
   }
 }
 

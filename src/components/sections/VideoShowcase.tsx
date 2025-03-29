@@ -35,7 +35,7 @@ const VideoShowcase: React.FC = () => {
     <section 
       id="video-showcase" 
       ref={sectionRef}
-      className="relative py-16 md:py-24 px-4 overflow-hidden"
+      className="relative py-16 md:py-24 px-4 section-transition"
     >
       <div className="wavy-divider absolute top-0 left-0 w-full opacity-70"></div>
       

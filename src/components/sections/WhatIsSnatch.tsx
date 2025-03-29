@@ -32,7 +32,7 @@ const WhatIsSnatch: React.FC = () => {
     <section 
       id="what-is-snatch" 
       ref={sectionRef}
-      className="relative py-16 md:py-20 px-4"
+      className="relative py-16 md:py-20 px-4 section-transition"
     >
       <div className="wavy-divider absolute top-0 left-0 w-full"></div>
       

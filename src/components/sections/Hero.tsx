@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { PartyPopper, Sparkles } from 'lucide-react';
 import CountdownTimer from '../CountdownTimer';
@@ -20,11 +21,11 @@ const Hero: React.FC = () => {
     <section id="hero" className="relative min-h-screen flex flex-col justify-center items-center text-center px-4 py-16 md:py-24">
       <div className={`transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="flex justify-center items-center gap-3 mb-4">
-          <PartyPopper size={isMobile ? 30 : 40} className="text-snatch-yellow glow-effect" />
+          <PartyPopper size={isMobile ? 30 : 40} className="text-partiful-cream glow-effect" />
           <h1 className="font-fredoka text-4xl md:text-6xl text-white tracking-tight">
             Snatch!
           </h1>
-          <PartyPopper size={isMobile ? 30 : 40} className="text-snatch-yellow glow-effect" />
+          <PartyPopper size={isMobile ? 30 : 40} className="text-partiful-cream glow-effect" />
         </div>
         
         <h2 className="text-xl md:text-3xl text-white mb-6 md:mb-8">
@@ -59,12 +60,12 @@ const Hero: React.FC = () => {
         </a>
       </div>
       
-      {/* Floating decorative elements */}
-      <div className="absolute top-1/4 left-1/5 opacity-20 animate-pulse hidden md:block">
-        <Sparkles size={24} className="text-snatch-pink" />
+      {/* Partiful-inspired subtle floating elements */}
+      <div className="absolute top-1/4 left-1/5 opacity-10 animate-pulse hidden md:block">
+        <Sparkles size={24} className="text-partiful-blue" />
       </div>
-      <div className="absolute bottom-1/3 right-1/4 opacity-20 animate-pulse hidden md:block">
-        <PartyPopper size={32} className="text-snatch-yellow" />
+      <div className="absolute bottom-1/3 right-1/4 opacity-10 animate-pulse hidden md:block">
+        <PartyPopper size={32} className="text-partiful-cream" />
       </div>
     </section>
   );

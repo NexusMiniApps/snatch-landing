@@ -19,10 +19,10 @@ const Index = () => {
   const mainRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
-    // Hide confetti after 5 seconds
+    // Hide confetti after 3 seconds
     const timer = setTimeout(() => {
       setShowConfetti(false);
-    }, 5000);
+    }, 3000);
     
     // Track scroll position for parallax effects
     const handleScroll = () => {
@@ -47,32 +47,44 @@ const Index = () => {
   }, []);
   
   return (
-    <div ref={mainRef} className="min-h-screen bg-gradient-party text-white relative overflow-hidden">
-      {/* Texture overlay with improved pattern */}
+    <div ref={mainRef} className="min-h-screen bg-partiful-dark text-white relative overflow-hidden">
+      {/* Subtle texture overlay */}
       <div className="texture-overlay"></div>
       
       {/* Confetti animation */}
-      {showConfetti && <Confetti duration={5000} />}
+      {showConfetti && <Confetti duration={3000} />}
       
-      {/* Background sparkles with improved density */}
-      <Sparkles count={150} />
+      {/* Background sparkles with reduced density */}
+      <Sparkles count={100} />
       
       {/* Background stars with parallax effect */}
-      <div className="absolute inset-0 bg-stars opacity-20 pointer-events-none transition-transform duration-200 ease-linear"></div>
+      <div className="absolute inset-0 bg-stars opacity-10 pointer-events-none transition-transform duration-200 ease-linear"></div>
       
-      {/* Ambient glow effects */}
-      <div className="fixed top-1/4 -left-20 w-40 h-40 rounded-full bg-snatch-purple/20 blur-3xl"></div>
-      <div className="fixed bottom-1/4 -right-20 w-60 h-60 rounded-full bg-snatch-pink/20 blur-3xl"></div>
+      {/* Ambient gradient accents inspired by Partiful */}
+      <div className="fixed top-0 left-0 w-full h-1/4 bg-gradient-to-b from-partiful-purple/10 to-transparent pointer-events-none"></div>
+      <div className="fixed bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-partiful-purple/10 to-transparent pointer-events-none"></div>
+      <div className="fixed -left-32 top-1/3 w-64 h-64 rounded-full bg-partiful-purple/10 blur-3xl"></div>
+      <div className="fixed -right-32 top-2/3 w-64 h-64 rounded-full bg-partiful-blue/10 blur-3xl"></div>
+      
+      {/* Partiful-inspired gradient line at top */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-partiful-gradient"></div>
       
       {/* Main content */}
       <div className="relative z-10">
         <Hero />
+        <div className="section-divider bg-gradient-to-b from-partiful-dark to-partiful-dark/90"></div>
         <WhatIsSnatch />
+        <div className="section-divider bg-gradient-to-b from-partiful-dark/90 to-partiful-dark/80"></div>
         <VideoShowcase />
+        <div className="section-divider bg-gradient-to-b from-partiful-dark/80 to-partiful-dark/90"></div>
         <Problem />
+        <div className="section-divider bg-gradient-to-b from-partiful-dark/90 to-partiful-dark"></div>
         <Solution />
+        <div className="section-divider bg-gradient-to-b from-partiful-dark to-partiful-dark/90"></div>
         <Features />
+        <div className="section-divider bg-gradient-to-b from-partiful-dark/90 to-partiful-dark"></div>
         <Team />
+        <div className="section-divider bg-gradient-to-b from-partiful-dark to-partiful-dark/90"></div>
         <Acknowledgments />
         <Footer />
       </div>

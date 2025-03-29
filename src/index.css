@@ -100,7 +100,7 @@
 
 @layer components {
   .btn-cta {
-    @apply bg-snatch-yellow text-snatch-darkpurple font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 hover:bg-opacity-90;
+    @apply bg-partiful-purple text-white font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105;
   }
   
   .section-title {
@@ -137,6 +137,12 @@
     height: 100%;
   }
 
+  .section-divider {
+    height: 80px;
+    position: relative;
+    z-index: 1;
+  }
+
   .section-transition {
     position: relative;
     overflow: hidden;
@@ -149,8 +155,8 @@
     left: 0;
     width: 100%;
     height: 50px;
-    background: linear-gradient(to bottom, transparent, #3B0764);
-    transform: skewY(-2deg);
+    background: linear-gradient(to bottom, transparent, rgba(26, 24, 40, 0.5));
+    transform: skewY(-1deg);
     z-index: 1;
   }
 }
@@ -164,7 +170,6 @@
   background-position: 0 0, 30px 30px;
 }
 
-/* Confetti styles */
 #confetti-canvas {
   position: fixed;
   z-index: 1000;
@@ -175,7 +180,6 @@
   pointer-events: none;
 }
 
-/* Sticky CTA button */
 .sticky-cta {
   position: fixed;
   bottom: 2rem;
@@ -184,7 +188,6 @@
   filter: drop-shadow(0 5px 15px rgba(168, 85, 247, 0.4));
 }
 
-/* Improved mobile responsiveness */
 @media (max-width: 640px) {
   .wavy-divider {
     height: 50px;
@@ -205,17 +208,15 @@
   }
 }
 
-/* Creative texture overlay */
 .texture-overlay {
   position: fixed;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.03'%3E%3Cpath d='M65 65H35V35h10v10h10V35h10v30zm-30 0V35H15v30h20zm70-30v30H85V35h20zM85 65H55V55h30v10zM45 55H15V45h30v10zm0-10H35V35h10v10zm10 0V45h10v10H55zm30-10h10v10H85V35zM15 5h70v30H15V5zm0 90V65h30v30H15zm70 0V75H55v20h30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2H6zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 1;
-  opacity: 0.4;
+  opacity: 0.2;
 }
 
-/* Enhanced animations */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -226,12 +227,12 @@
 }
 
 .glow-effect {
-  filter: drop-shadow(0 0 8px rgba(253, 224, 71, 0.7));
+  filter: drop-shadow(0 0 8px rgba(91, 59, 215, 0.5));
   transition: filter 0.3s ease;
 }
 
 .glow-effect:hover {
-  filter: drop-shadow(0 0 15px rgba(253, 224, 71, 1));
+  filter: drop-shadow(0 0 15px rgba(91, 59, 215, 0.8));
 }
 
 @keyframes ping-slow {
@@ -253,7 +254,6 @@
   animation: ping-slow 3s ease-in-out infinite;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -271,19 +271,16 @@
   background: rgba(236, 72, 153, 0.8);
 }
 
-/* Additional handcrafted touches */
 ::selection {
   background-color: rgba(236, 72, 153, 0.3);
   color: white;
 }
 
-/* Make sure we add custom font rendering for better looks */
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Additional aspect ratio utilities */
 .aspect-w-16 {
   position: relative;
   padding-bottom: calc(9 / 16 * 100%);

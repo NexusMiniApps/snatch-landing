@@ -38,25 +38,7 @@ const Index = () => {
       }
     };
     
-    // Create falling leaves effect
-    const createLeaves = () => {
-      const container = document.querySelector('.falling-leaves');
-      if (!container) return;
-      
-      for (let i = 0; i < 15; i++) {
-        const leaf = document.createElement('div');
-        leaf.classList.add('leaf');
-        leaf.style.left = `${Math.random() * 100}%`;
-        leaf.style.animationDuration = `${Math.random() * 10 + 10}s, ${Math.random() * 5 + 5}s`;
-        leaf.style.animationDelay = `${Math.random() * 10}s`;
-        leaf.style.opacity = `${Math.random() * 0.5 + 0.3}`;
-        leaf.style.transform = `scale(${Math.random() * 0.5 + 0.5})`;
-        container.appendChild(leaf);
-      }
-    };
-    
     window.addEventListener('scroll', handleScroll);
-    createLeaves();
     
     return () => {
       clearTimeout(timer);
@@ -65,47 +47,44 @@ const Index = () => {
   }, []);
   
   return (
-    <div ref={mainRef} className="min-h-screen text-[#1a3c2b] relative overflow-hidden ghibli-mountains">
+    <div ref={mainRef} className="min-h-screen bg-partiful-dark text-white relative overflow-hidden">
       {/* Subtle texture overlay */}
       <div className="texture-overlay"></div>
-      
-      {/* Falling leaves animation */}
-      <div className="falling-leaves"></div>
       
       {/* Confetti animation */}
       {showConfetti && <Confetti duration={3000} />}
       
       {/* Background sparkles with reduced density */}
-      <Sparkles count={50} />
+      <Sparkles count={100} />
       
       {/* Background stars with parallax effect */}
       <div className="absolute inset-0 bg-stars opacity-10 pointer-events-none transition-transform duration-200 ease-linear"></div>
       
-      {/* Ambient gradient accents */}
-      <div className="fixed top-0 left-0 w-full h-1/4 bg-gradient-to-b from-[#f2fce2]/30 to-transparent pointer-events-none"></div>
-      <div className="fixed bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-[#d3e4fd]/30 to-transparent pointer-events-none"></div>
-      <div className="fixed -left-32 top-1/3 w-64 h-64 rounded-full bg-[#f2fce2]/20 blur-3xl"></div>
-      <div className="fixed -right-32 top-2/3 w-64 h-64 rounded-full bg-[#d3e4fd]/20 blur-3xl"></div>
+      {/* Ambient gradient accents inspired by Partiful */}
+      <div className="fixed top-0 left-0 w-full h-1/4 bg-gradient-to-b from-partiful-purple/10 to-transparent pointer-events-none"></div>
+      <div className="fixed bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-partiful-purple/10 to-transparent pointer-events-none"></div>
+      <div className="fixed -left-32 top-1/3 w-64 h-64 rounded-full bg-partiful-purple/10 blur-3xl"></div>
+      <div className="fixed -right-32 top-2/3 w-64 h-64 rounded-full bg-partiful-blue/10 blur-3xl"></div>
       
-      {/* Ghibli-inspired gradient line at top */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#f2fce2] via-[#d96a4f] to-[#d3e4fd]"></div>
+      {/* Partiful-inspired gradient line at top */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-partiful-gradient"></div>
       
       {/* Main content */}
       <div className="relative z-10">
         <Hero />
-        <div className="section-divider"></div>
+        <div className="section-divider bg-gradient-to-b from-partiful-dark to-partiful-dark/90"></div>
         <WhatIsSnatch />
-        <div className="section-divider"></div>
+        <div className="section-divider bg-gradient-to-b from-partiful-dark/90 to-partiful-dark/80"></div>
         <VideoShowcase />
-        <div className="section-divider"></div>
+        <div className="section-divider bg-gradient-to-b from-partiful-dark/80 to-partiful-dark/90"></div>
         <Problem />
-        <div className="section-divider"></div>
+        <div className="section-divider bg-gradient-to-b from-partiful-dark/90 to-partiful-dark"></div>
         <Solution />
-        <div className="section-divider"></div>
+        <div className="section-divider bg-gradient-to-b from-partiful-dark to-partiful-dark/90"></div>
         <Features />
-        <div className="section-divider"></div>
+        <div className="section-divider bg-gradient-to-b from-partiful-dark/90 to-partiful-dark"></div>
         <Team />
-        <div className="section-divider"></div>
+        <div className="section-divider bg-gradient-to-b from-partiful-dark to-partiful-dark/90"></div>
         <Acknowledgments />
         <Footer />
       </div>

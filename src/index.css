@@ -97,22 +97,6 @@
     @apply bg-background text-foreground font-outfit;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-image: url("https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?auto=format&fit=crop&q=20&w=1500&h=500");
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    position: relative;
-  }
-  
-  body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.85);
-    z-index: -1;
   }
   
   html {
@@ -122,20 +106,20 @@
 
 @layer components {
   .btn-cta {
-    @apply bg-[#4d774e] text-white font-bold py-3 px-7 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 relative overflow-hidden;
+    @apply bg-partiful-purple text-white font-bold py-3 px-7 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 relative overflow-hidden;
   }
   
   .btn-cta::after {
-    @apply content-[''] absolute inset-0 bg-gradient-to-r from-[#d96a4f]/0 via-[#d96a4f]/30 to-[#d96a4f]/0 -translate-x-full;
+    @apply content-[''] absolute inset-0 bg-gradient-to-r from-snatch-pink/0 via-snatch-pink/30 to-snatch-pink/0 -translate-x-full;
     animation: shimmer 2.5s infinite;
   }
   
   .section-title {
-    @apply font-outfit font-bold text-3xl md:text-5xl bg-gradient-to-r from-[#4d774e] via-[#8a9a5b] to-[#d96a4f] bg-clip-text text-transparent mb-12 md:mb-16 text-center;
+    @apply font-outfit font-bold text-3xl md:text-5xl bg-gradient-to-r from-snatch-purple via-partiful-purple to-snatch-pink bg-clip-text text-transparent mb-12 md:mb-16 text-center;
   }
   
   .feature-card {
-    @apply bg-white/75 backdrop-blur-md p-6 rounded-2xl border border-[#a4d4dc]/30 hover:shadow-[0_0_25px_rgba(77,119,78,0.15)] transition-all duration-500 hover:border-[#4d774e]/20;
+    @apply bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 hover:shadow-[0_0_25px_rgba(236,72,153,0.15)] transition-all duration-500 hover:border-snatch-pink/20;
   }
   
   .sparkle {
@@ -168,7 +152,6 @@
     height: 80px;
     position: relative;
     z-index: 1;
-    background: linear-gradient(to bottom, rgba(242, 252, 226, 0.5), rgba(211, 228, 253, 0.5));
   }
 
   .section-transition {
@@ -183,37 +166,33 @@
     left: 0;
     width: 100%;
     height: 50px;
-    background: linear-gradient(to bottom, transparent, rgba(211, 228, 253, 0.5));
+    background: linear-gradient(to bottom, transparent, rgba(26, 24, 40, 0.5));
     transform: skewY(-1deg);
     z-index: 1;
   }
   
   .glass-morphism {
-    @apply backdrop-blur-xl bg-white/70 border border-white/30 shadow-[0_4px_12px_rgba(0,0,0,0.15)] transition-all duration-300;
+    @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-[0_4px_12px_rgba(0,0,0,0.3)] transition-all duration-300;
   }
   
   .modern-card {
-    @apply bg-white/70 backdrop-blur-xl border border-[#a4d4dc]/30 rounded-2xl p-6 transition-all duration-300 hover:shadow-[0_0_30px_rgba(77,119,78,0.2)];
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:shadow-[0_0_30px_rgba(91,59,215,0.2)];
   }
   
   .gradient-border {
-    @apply relative rounded-2xl p-[1px] bg-gradient-to-br from-[#4d774e]/30 via-[#d96a4f]/30 to-[#fef7cd]/30;
+    @apply relative rounded-2xl p-[1px] bg-gradient-to-br from-partiful-purple/30 via-snatch-pink/30 to-snatch-yellow/30;
   }
   
   .gradient-border > div {
-    @apply bg-white/80 backdrop-blur-xl rounded-2xl p-6;
-  }
-  
-  .ghibli-card {
-    @apply bg-white/80 backdrop-blur-md rounded-3xl border border-[#a4d4dc]/30 p-6 shadow-[0_15px_35px_rgba(77,119,78,0.1)];
+    @apply bg-partiful-dark/95 backdrop-blur-xl rounded-2xl p-6;
   }
 }
 
 .bg-stars {
   background-color: transparent;
   background-image: 
-    radial-gradient(rgba(77, 119, 78, 0.4), rgba(77, 119, 78, 0.1) 2px, transparent 8px),
-    radial-gradient(rgba(77, 119, 78, 0.2), rgba(77, 119, 78, 0.05) 1px, transparent 6px);
+    radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 8px),
+    radial-gradient(white, rgba(255, 255, 255, 0.1) 1px, transparent 6px);
   background-size: 100px 100px, 60px 60px;
   background-position: 0 0, 30px 30px;
 }
@@ -259,7 +238,7 @@
 .texture-overlay {
   position: fixed;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234d774e' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2H6zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2H6zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 1;
   opacity: 0.2;
@@ -287,12 +266,12 @@
 }
 
 .glow-effect {
-  filter: drop-shadow(0 0 8px rgba(77, 119, 78, 0.5));
+  filter: drop-shadow(0 0 8px rgba(91, 59, 215, 0.5));
   transition: filter 0.3s ease;
 }
 
 .glow-effect:hover {
-  filter: drop-shadow(0 0 15px rgba(77, 119, 78, 0.8));
+  filter: drop-shadow(0 0 15px rgba(91, 59, 215, 0.8));
 }
 
 @keyframes ping-slow {
@@ -352,63 +331,13 @@
 }
 
 .text-gradient {
-  @apply bg-gradient-to-r from-[#4d774e] via-[#8a9a5b] to-[#d96a4f] bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-snatch-purple via-snatch-pink to-snatch-yellow bg-clip-text text-transparent;
 }
 
 .backdrop-blur-card {
-  @apply backdrop-blur-xl bg-white/70 border border-[#a4d4dc]/30 rounded-xl;
+  @apply backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl;
 }
 
 .cta-hover-effect:hover {
-  box-shadow: 0 0 25px rgba(77, 119, 78, 0.5);
-}
-
-.ghibli-mountains::before {
-  content: '';
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 200px;
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=20&w=2000&h=300');
-  background-size: cover;
-  background-position: center top;
-  z-index: -2;
-  opacity: 0.3;
-}
-
-.falling-leaves {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.leaf {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: linear-gradient(to bottom right, #8a9a5b, #4d774e);
-  border-radius: 0 50% 50% 50%;
-  opacity: 0.5;
-  animation: fall linear infinite, sway ease-in-out infinite alternate;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(100vh) rotate(90deg);
-  }
-}
-
-@keyframes sway {
-  from {
-    transform: translateX(-10px) rotate(0deg);
-  }
-  to {
-    transform: translateX(10px) rotate(45deg);
-  }
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
 }

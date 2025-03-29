@@ -1,6 +1,6 @@
-
 import React, { useRef, useState, useEffect } from 'react';
 import { Zap, Award, Heart, Star, Sparkles } from 'lucide-react';
+import VectorBackground from '@/components/VectorBackground';
 
 const Problem: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -42,6 +42,11 @@ const Problem: React.FC = () => {
         <div className="absolute bottom-40 right-1/4 w-2 h-2 rounded-full bg-snatch-pink/40 animate-pulse-scale animation-delay-1500"></div>
       </div>
       
+      {/* Vector backgrounds */}
+      <div className="absolute inset-0 opacity-30">
+        <VectorBackground variant="waves" color="#EC4899" opacity={0.05} />
+      </div>
+      
       <div className="wavy-divider absolute top-0 left-0 w-full"></div>
       
       <div className="container mx-auto max-w-6xl relative z-10">
@@ -63,6 +68,11 @@ const Problem: React.FC = () => {
             <div className="mt-10 bg-white/10 backdrop-blur-md p-6 rounded-xl border border-snatch-pink/20 shadow-glow-pink hover:shadow-glow-md transition-all duration-500 relative overflow-hidden group">
               {/* Subtle gradient overlay that animates on hover */}
               <div className="absolute inset-0 bg-gradient-to-r from-partiful-purple/5 via-snatch-pink/5 to-partiful-purple/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              
+              {/* Add vector background inside card */}
+              <div className="absolute inset-0 opacity-30">
+                <VectorBackground variant="grid" color="#ffffff" opacity={0.03} />
+              </div>
               
               <div className="flex justify-between text-white mb-8 relative z-10">
                 <div className="flex flex-col items-center transform transition-transform duration-300 hover:scale-105">
@@ -126,12 +136,17 @@ const Problem: React.FC = () => {
           <div className={`md:col-span-2 transition-all duration-700 delay-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <div className="relative rounded-lg overflow-hidden shadow-[0_0_20px_rgba(236,72,153,0.2)] border border-snatch-pink/20 animate-bounce-subtle animation-delay-200">
               <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm p-6 rounded-lg">
-                <h3 className="text-snatch-yellow font-fredoka text-xl mb-6 flex items-center">
+                {/* Add vector background inside card */}
+                <div className="absolute inset-0 opacity-20">
+                  <VectorBackground variant="dots" color="#FDE047" opacity={0.1} />
+                </div>
+                
+                <h3 className="text-snatch-yellow font-fredoka text-xl mb-6 flex items-center relative z-10">
                   <span className="text-gradient">The Launch Problem</span>
                   <div className="ml-2 h-1 flex-1 bg-gradient-to-r from-snatch-yellow to-transparent rounded-full"></div>
                 </h3>
                 
-                <ul className="space-y-5">
+                <ul className="space-y-5 relative z-10">
                   {[
                     "Low engagement that drops quickly",
                     "Minimal brand memory after the event",

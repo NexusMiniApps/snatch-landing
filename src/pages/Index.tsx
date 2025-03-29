@@ -5,6 +5,7 @@ import Sparkles from '@/components/Sparkles';
 import StickyButton from '@/components/StickyButton';
 import Hero from '@/components/sections/Hero';
 import WhatIsSnatch from '@/components/sections/WhatIsSnatch';
+import VideoShowcase from '@/components/sections/VideoShowcase';
 import Problem from '@/components/sections/Problem';
 import Solution from '@/components/sections/Solution';
 import Features from '@/components/sections/Features';
@@ -67,6 +68,7 @@ const Index = () => {
       <div className="relative z-10">
         <Hero />
         <WhatIsSnatch />
+        <VideoShowcase />
         <Problem />
         <Solution />
         <Features />

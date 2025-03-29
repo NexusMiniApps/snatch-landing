@@ -1,6 +1,5 @@
 
 import React, { useEffect, useState, useRef } from 'react';
-import Confetti from '@/components/Confetti';
 import Sparkles from '@/components/Sparkles';
 import StickyButton from '@/components/StickyButton';
 import Hero from '@/components/sections/Hero';
@@ -14,16 +13,10 @@ import Acknowledgments from '@/components/sections/Acknowledgments';
 import Footer from '@/components/Footer';
 
 const Index = () => {
-  const [showConfetti, setShowConfetti] = useState(true);
   const [scrolled, setScrolled] = useState(false);
   const mainRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
-    // Hide confetti after 3 seconds
-    const timer = setTimeout(() => {
-      setShowConfetti(false);
-    }, 3000);
-    
     // Track scroll position for parallax effects
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -41,7 +34,6 @@ const Index = () => {
     window.addEventListener('scroll', handleScroll);
     
     return () => {
-      clearTimeout(timer);
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
@@ -50,9 +42,6 @@ const Index = () => {
     <div ref={mainRef} className="min-h-screen bg-partiful-dark text-white relative overflow-hidden">
       {/* Subtle texture overlay */}
       <div className="texture-overlay"></div>
-      
-      {/* Confetti animation */}
-      {showConfetti && <Confetti duration={3000} />}
       
       {/* Background sparkles with reduced density */}
       <Sparkles count={100} />

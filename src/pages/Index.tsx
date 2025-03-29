@@ -12,7 +12,6 @@ import Features from '@/components/sections/Features';
 import Team from '@/components/sections/Team';
 import Acknowledgments from '@/components/sections/Acknowledgments';
 import Footer from '@/components/Footer';
-import VectorBackground from '@/components/VectorBackground';
 
 const Index = () => {
   const [showConfetti, setShowConfetti] = useState(true);
@@ -58,10 +57,6 @@ const Index = () => {
       {/* Background sparkles with reduced density */}
       <Sparkles count={100} />
       
-      {/* Vector translucent backgrounds */}
-      <VectorBackground variant="waves" color="#5b3bd7" opacity={0.03} className="fixed top-0 left-0" />
-      <VectorBackground variant="circles" color="#EC4899" opacity={0.02} className="fixed bottom-0 right-0" />
-      
       {/* Background stars with parallax effect */}
       <div className="absolute inset-0 bg-stars opacity-10 pointer-events-none transition-transform duration-200 ease-linear"></div>
       
@@ -76,60 +71,21 @@ const Index = () => {
       
       {/* Main content */}
       <div className="relative z-10">
-        <div className="relative">
-          <VectorBackground variant="dots" color="#FDE047" opacity={0.03} className="absolute inset-0" />
-          <Hero />
-        </div>
-        
+        <Hero />
         <div className="section-divider bg-gradient-to-b from-partiful-dark to-partiful-dark/90"></div>
-        
-        <div className="relative">
-          <VectorBackground variant="grid" color="#ffffff" opacity={0.02} className="absolute inset-0" />
-          <WhatIsSnatch />
-        </div>
-        
+        <WhatIsSnatch />
         <div className="section-divider bg-gradient-to-b from-partiful-dark/90 to-partiful-dark/80"></div>
-        
-        <div className="relative">
-          <VectorBackground variant="circles" color="#4bb6e7" opacity={0.02} className="absolute inset-0" />
-          <VideoShowcase />
-        </div>
-        
+        <VideoShowcase />
         <div className="section-divider bg-gradient-to-b from-partiful-dark/80 to-partiful-dark/90"></div>
-        
-        <div className="relative">
-          <VectorBackground variant="waves" color="#b14f8c" opacity={0.03} className="absolute inset-0" />
-          <Problem />
-        </div>
-        
+        <Problem />
         <div className="section-divider bg-gradient-to-b from-partiful-dark/90 to-partiful-dark"></div>
-        
-        <div className="relative">
-          <VectorBackground variant="grid" color="#a4d4dc" opacity={0.02} className="absolute inset-0" />
-          <Solution />
-        </div>
-        
+        <Solution />
         <div className="section-divider bg-gradient-to-b from-partiful-dark to-partiful-dark/90"></div>
-        
-        <div className="relative">
-          <VectorBackground variant="dots" color="#efce99" opacity={0.03} className="absolute inset-0" />
-          <Features />
-        </div>
-        
+        <Features />
         <div className="section-divider bg-gradient-to-b from-partiful-dark/90 to-partiful-dark"></div>
-        
-        <div className="relative">
-          <VectorBackground variant="circles" color="#FDE047" opacity={0.02} className="absolute inset-0" />
-          <Team />
-        </div>
-        
+        <Team />
         <div className="section-divider bg-gradient-to-b from-partiful-dark to-partiful-dark/90"></div>
-        
-        <div className="relative">
-          <VectorBackground variant="waves" color="#EC4899" opacity={0.02} className="absolute inset-0" />
-          <Acknowledgments />
-        </div>
-        
+        <Acknowledgments />
         <Footer />
       </div>
       

@@ -1,6 +1,6 @@
 
 import React, { useRef, useState, useEffect } from 'react';
-import { Gamepad2, Trophy, Clock, Bot } from 'lucide-react';
+import { Gamepad2, Trophy, Clock, Bot, Code, PartyPopper, Database } from 'lucide-react';
 
 const Features: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -90,22 +90,22 @@ const Features: React.FC = () => {
           
           <div className="flex flex-wrap justify-center gap-8 items-center">
             <div className="text-center">
-              <div className="bg-white/10 h-20 w-20 rounded-full flex items-center justify-center mx-auto mb-2">
-                <span className="text-white font-bold">Next.js</span>
+              <div className="bg-white/10 h-20 w-20 rounded-full flex items-center justify-center mx-auto mb-2 relative overflow-hidden group transition-all duration-300 hover:bg-white/20">
+                <Code className="text-white h-10 w-10 group-hover:scale-110 transition-transform duration-300" />
               </div>
               <span className="text-white text-sm">For speed</span>
             </div>
             
             <div className="text-center">
-              <div className="bg-white/10 h-20 w-20 rounded-full flex items-center justify-center mx-auto mb-2">
-                <span className="text-white font-bold">PartyKit</span>
+              <div className="bg-white/10 h-20 w-20 rounded-full flex items-center justify-center mx-auto mb-2 relative overflow-hidden group transition-all duration-300 hover:bg-white/20">
+                <PartyPopper className="text-white h-10 w-10 group-hover:scale-110 transition-transform duration-300" />
               </div>
               <span className="text-white text-sm">For live action</span>
             </div>
             
             <div className="text-center">
-              <div className="bg-white/10 h-20 w-20 rounded-full flex items-center justify-center mx-auto mb-2">
-                <span className="text-white font-bold">PostgreSQL</span>
+              <div className="bg-white/10 h-20 w-20 rounded-full flex items-center justify-center mx-auto mb-2 relative overflow-hidden group transition-all duration-300 hover:bg-white/20">
+                <Database className="text-white h-10 w-10 group-hover:scale-110 transition-transform duration-300" />
               </div>
               <span className="text-white text-sm">For smooth data</span>
             </div>

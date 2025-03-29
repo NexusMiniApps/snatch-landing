@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -95,20 +95,31 @@
 
   body {
     @apply bg-background text-foreground font-outfit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  html {
+    scroll-behavior: smooth;
   }
 }
 
 @layer components {
   .btn-cta {
-    @apply bg-partiful-purple text-white font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105;
+    @apply bg-partiful-purple text-white font-bold py-3 px-7 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 relative overflow-hidden;
+  }
+  
+  .btn-cta::after {
+    @apply content-[''] absolute inset-0 bg-gradient-to-r from-snatch-pink/0 via-snatch-pink/30 to-snatch-pink/0 -translate-x-full;
+    animation: shimmer 2.5s infinite;
   }
   
   .section-title {
-    @apply font-outfit font-bold text-3xl md:text-4xl text-snatch-purple mb-8 md:mb-10 animate-bounce-subtle text-center;
+    @apply font-outfit font-bold text-3xl md:text-5xl bg-gradient-to-r from-snatch-purple via-partiful-purple to-snatch-pink bg-clip-text text-transparent mb-12 md:mb-16 text-center;
   }
   
   .feature-card {
-    @apply bg-white/10 backdrop-blur-md p-6 rounded-xl hover:shadow-[0_0_15px_rgba(236,72,153,0.5)] transition-all duration-300;
+    @apply bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 hover:shadow-[0_0_25px_rgba(236,72,153,0.15)] transition-all duration-500 hover:border-snatch-pink/20;
   }
   
   .sparkle {
@@ -162,6 +173,18 @@
   
   .glass-morphism {
     @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-[0_4px_12px_rgba(0,0,0,0.3)] transition-all duration-300;
+  }
+  
+  .modern-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:shadow-[0_0_30px_rgba(91,59,215,0.2)];
+  }
+  
+  .gradient-border {
+    @apply relative rounded-2xl p-[1px] bg-gradient-to-br from-partiful-purple/30 via-snatch-pink/30 to-snatch-yellow/30;
+  }
+  
+  .gradient-border > div {
+    @apply bg-partiful-dark/95 backdrop-blur-xl rounded-2xl p-6;
   }
 }
 
@@ -219,6 +242,18 @@
   pointer-events: none;
   z-index: 1;
   opacity: 0.2;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  60% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 @keyframes float {
@@ -280,11 +315,6 @@
   color: white;
 }
 
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 .aspect-w-16 {
   position: relative;
   padding-bottom: calc(9 / 16 * 100%);
@@ -298,4 +328,16 @@ html {
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r from-snatch-purple via-snatch-pink to-snatch-yellow bg-clip-text text-transparent;
+}
+
+.backdrop-blur-card {
+  @apply backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl;
+}
+
+.cta-hover-effect:hover {
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
 }

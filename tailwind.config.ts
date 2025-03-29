@@ -83,7 +83,9 @@ export default {
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				sm: 'calc(var(--radius) - 4px)',
+				'2xl': '1rem',
+				'3xl': '1.5rem',
 			},
 			keyframes: {
 				'accordion-down': {
@@ -165,6 +167,14 @@ export default {
 					'50%': {
 						transform: 'translateY(-15px)'
 					}
+				},
+				'shimmer': {
+					'0%': {
+						transform: 'translateX(-100%)'
+					},
+					'100%': {
+						transform: 'translateX(100%)'
+					}
 				}
 			},
 			animation: {
@@ -176,19 +186,33 @@ export default {
 				'sparkle': 'sparkle 3s ease-in-out infinite',
 				'countdown': 'countdown 1s ease-in-out infinite',
 				'ping-slow': 'ping-slow 3s ease-in-out infinite',
-				'float-slow': 'float-slow 6s ease-in-out infinite'
+				'float-slow': 'float-slow 6s ease-in-out infinite',
+				'shimmer': 'shimmer 2.5s ease-in-out infinite',
 			},
 			backgroundImage: {
 				'gradient-party': 'linear-gradient(135deg, #1E1B4B, #3B0764)',
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'partiful-gradient': 'linear-gradient(to right, #a4d4dc, #b14f8c, #4bb6e7)',
+				'partiful-gradient': 'linear-gradient(to right, #a4d4dc, #b14f8c, #4bb6e7)',
+				'modern-gradient': 'linear-gradient(to right, #EC4899, #8B5CF6, #3B82F6)',
+				'soft-glow': 'radial-gradient(circle at center, rgba(91, 59, 215, 0.3) 0%, rgba(26, 24, 40, 0) 70%)',
 			},
 			fontFamily: {
 				'fredoka': ['"Fredoka One"', 'cursive'],
 				'inter': ['Inter', 'sans-serif'],
 				'nunito': ['Nunito', 'sans-serif'],
 				'outfit': ['Outfit', 'sans-serif'],
-			}
+			},
+			boxShadow: {
+				'glow-sm': '0 0 15px rgba(91, 59, 215, 0.3)',
+				'glow-md': '0 0 25px rgba(91, 59, 215, 0.4)',
+				'glow-lg': '0 0 35px rgba(91, 59, 215, 0.5)',
+				'glow-pink': '0 0 25px rgba(236, 72, 153, 0.5)',
+			},
+			dropShadow: {
+				'glow-sm': '0 0 8px rgba(91, 59, 215, 0.5)',
+				'glow-md': '0 0 12px rgba(91, 59, 215, 0.6)',
+				'glow-pink': '0 0 10px rgba(236, 72, 153, 0.6)',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

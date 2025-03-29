@@ -1,9 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const CountdownTimer: React.FC = () => {
   const [count, setCount] = useState(3);
   const [isActive, setIsActive] = useState(true);
+  const isMobile = useIsMobile();
   
   useEffect(() => {
     if (!isActive) return;
@@ -36,15 +38,15 @@ const CountdownTimer: React.FC = () => {
   
   if (count === 0) {
     return (
-      <div className="inline-block animate-countdown text-snatch-yellow font-fredoka text-4xl md:text-6xl">
+      <div className="inline-block animate-countdown text-snatch-yellow font-fredoka text-3xl md:text-5xl lg:text-6xl glow-effect">
         Launch!
       </div>
     );
   }
   
   return (
-    <div className="inline-block animate-countdown text-snatch-yellow font-fredoka text-4xl md:text-6xl">
-      Next Launch in {count}...
+    <div className="inline-block animate-countdown text-snatch-yellow font-fredoka text-3xl md:text-5xl lg:text-6xl">
+      {isMobile ? `Launch in ${count}...` : `Next Launch in ${count}...`}
     </div>
   );
 };

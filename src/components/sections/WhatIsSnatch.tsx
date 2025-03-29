@@ -1,10 +1,12 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import { PartyPopper } from 'lucide-react';
+import { PartyPopper, Sparkles } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const WhatIsSnatch: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const isMobile = useIsMobile();
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -30,7 +32,7 @@ const WhatIsSnatch: React.FC = () => {
     <section 
       id="what-is-snatch" 
       ref={sectionRef}
-      className="relative py-20 px-4"
+      className="relative py-16 md:py-20 px-4"
     >
       <div className="wavy-divider absolute top-0 left-0 w-full"></div>
       
@@ -48,14 +50,14 @@ const WhatIsSnatch: React.FC = () => {
               We mix games, prizes, and a dash of urgency to make your brand the talk of the town.
             </p>
             
-            <div className="mt-8 flex items-center gap-3">
+            <div className="mt-8 flex items-center gap-3 float-animation">
               <PartyPopper size={30} className="text-snatch-pink" />
               <span className="text-white text-xl italic">Let's bring the party to your launch!</span>
             </div>
           </div>
           
           <div className={`relative transition-all duration-700 delay-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <div className="relative rounded-lg overflow-hidden shadow-[0_0_30px_rgba(236,72,153,0.3)] border border-snatch-pink/30">
+            <div className="relative rounded-lg overflow-hidden shadow-[0_0_30px_rgba(236,72,153,0.3)] border border-snatch-pink/30 glow-effect">
               <img 
                 src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
                 alt="Snatch! Game Interface"
@@ -64,6 +66,9 @@ const WhatIsSnatch: React.FC = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-snatch-darkpurple/80 to-transparent flex items-end justify-center p-6">
                 <span className="text-white font-fredoka text-xl">Gamified Launch Experience</span>
+              </div>
+              <div className="absolute top-2 left-2">
+                <Sparkles className="text-snatch-yellow animate-pulse" size={isMobile ? 16 : 20} />
               </div>
             </div>
             

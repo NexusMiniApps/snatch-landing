@@ -26,6 +26,9 @@ const Index = () => {
   
   return (
     <div className="min-h-screen bg-gradient-party text-white relative overflow-hidden">
+      {/* Texture overlay */}
+      <div className="texture-overlay"></div>
+      
       {/* Confetti animation */}
       {showConfetti && <Confetti duration={5000} />}
       

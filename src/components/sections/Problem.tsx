@@ -40,64 +40,65 @@ const Problem: React.FC = () => {
         
         <div className="grid md:grid-cols-5 gap-8 items-center">
           <div className={`md:col-span-3 transition-all duration-700 delay-200 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <p className="text-white text-lg mb-6">
-              Traditional launches are snooze-fests—buy, leave, forget. Our research shows 88% of people crave more fun, but brands miss the mark on building real connections.
-            </p>
-            <p className="text-white text-lg mb-6">
-              It's like hosting a party where everyone leaves early. Let's change that!
-            </p>
+            <div className="space-y-6">
+              <p className="text-white text-lg leading-relaxed">
+                Traditional launches are snooze-fests—buy, leave, forget. Our research shows 88% of people crave more fun, but brands miss the mark on building real connections.
+              </p>
+              <p className="text-white text-lg leading-relaxed">
+                It's like hosting a party where everyone leaves early. Let's change that!
+              </p>
+            </div>
             
-            <div className="mt-8 bg-white/10 backdrop-blur-md p-6 rounded-xl border border-snatch-pink/20">
-              <div className="flex justify-between text-white mb-3">
-                <span>Engagement</span>
-                <span>Customer Loyalty</span>
-                <span>Brand Memory</span>
+            <div className="mt-10 bg-white/10 backdrop-blur-md p-6 rounded-xl border border-snatch-pink/20">
+              <div className="flex justify-between text-white mb-8">
+                <span className="font-medium">Engagement</span>
+                <span className="font-medium">Customer Loyalty</span>
+                <span className="font-medium">Brand Memory</span>
               </div>
               
-              <div className="flex gap-4 items-end">
-                <div className="flex-1">
-                  <div className="h-12 bg-snatch-pink/30 relative rounded-t-md">
-                    <div className="absolute -top-7 left-1/2 transform -translate-x-1/2 text-white text-sm">23%</div>
-                  </div>
+              <div className="flex gap-6 items-end">
+                <div className="flex-1 flex flex-col items-center">
+                  <div className="mb-3 font-bold text-xl text-white">23%</div>
+                  <div className="h-16 w-full bg-snatch-pink/30 relative rounded-t-md"></div>
                 </div>
-                <div className="flex-1">
-                  <div className="h-16 bg-snatch-pink/30 relative rounded-t-md">
-                    <div className="absolute -top-7 left-1/2 transform -translate-x-1/2 text-white text-sm">35%</div>
-                  </div>
+                <div className="flex-1 flex flex-col items-center">
+                  <div className="mb-3 font-bold text-xl text-white">35%</div>
+                  <div className="h-24 w-full bg-snatch-pink/30 relative rounded-t-md"></div>
                 </div>
-                <div className="flex-1">
-                  <div className="h-10 bg-snatch-pink/30 relative rounded-t-md">
-                    <div className="absolute -top-7 left-1/2 transform -translate-x-1/2 text-white text-sm">18%</div>
-                  </div>
+                <div className="flex-1 flex flex-col items-center">
+                  <div className="mb-3 font-bold text-xl text-white">18%</div>
+                  <div className="h-12 w-full bg-snatch-pink/30 relative rounded-t-md"></div>
                 </div>
               </div>
-              <div className="text-center text-white/70 text-sm mt-4">Traditional Product Launches</div>
+              <div className="text-center text-white/70 text-sm mt-4 pt-2 border-t border-white/10">
+                Traditional Product Launches
+              </div>
             </div>
           </div>
           
           <div className={`md:col-span-2 transition-all duration-700 delay-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <div className="relative rounded-lg overflow-hidden shadow-[0_0_20px_rgba(236,72,153,0.2)] border border-snatch-pink/20 animate-bounce-subtle animation-delay-200">
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-                <h3 className="text-snatch-yellow font-fredoka text-xl mb-4">The Launch Problem</h3>
+                <h3 className="text-snatch-yellow font-fredoka text-xl mb-6">The Launch Problem</h3>
                 
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-2">
+                <ul className="space-y-5">
+                  <li className="flex items-start gap-3">
                     <span className="text-snatch-pink font-bold text-xl">✘</span>
                     <span className="text-white">Low engagement that drops quickly</span>
                   </li>
-                  <li className="flex items-start gap-2">
+                  <li className="flex items-start gap-3">
                     <span className="text-snatch-pink font-bold text-xl">✘</span>
                     <span className="text-white">Minimal brand memory after the event</span>
                   </li>
-                  <li className="flex items-start gap-2">
+                  <li className="flex items-start gap-3">
                     <span className="text-snatch-pink font-bold text-xl">✘</span>
                     <span className="text-white">No real connection with customers</span>
                   </li>
-                  <li className="flex items-start gap-2">
+                  <li className="flex items-start gap-3">
                     <span className="text-snatch-pink font-bold text-xl">✘</span>
                     <span className="text-white">Boring, forgettable experiences</span>
                   </li>
-                  <li className="flex items-start gap-2 mt-6">
+                  <li className="flex items-start gap-3 mt-8">
                     <span className="text-snatch-yellow font-bold text-xl">✓</span>
                     <span className="text-snatch-yellow font-bold">Snatch! solves all of these!</span>
                   </li>

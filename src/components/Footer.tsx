@@ -12,13 +12,13 @@ const Footer: React.FC = () => {
         
         <div className="flex justify-center items-center gap-3 mb-4">
           <PartyPopper size={16} className="text-snatch-pink opacity-70" />
-          <p className="text-white/70 text-sm">
+          <p className="text-white/70 text-sm font-outfit">
             © 2025 Snatch! | SUTD Capstone
           </p>
           <PartyPopper size={16} className="text-snatch-pink opacity-70" />
         </div>
         
-        <div className="text-white/40 text-xs italic">
+        <div className="text-white/40 text-xs italic font-outfit">
           Making product launches unforgettable, one game at a time
         </div>
         

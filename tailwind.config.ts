@@ -32,6 +32,15 @@ export default {
 					darkblue: "#1E1B4B",
 					darkpurple: "#3B0764",
 				},
+				partiful: {
+          purple: "#5b3bd7",
+          dark: "#1a1828",
+          pink: "#b14f8c",
+          blue: "#4bb6e7",
+          lightblue: "#a4d4dc",
+          cream: "#efce99",
+          orange: "#dba663",
+        },
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -171,10 +180,14 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-party': 'linear-gradient(135deg, #1E1B4B, #3B0764)',
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'partiful-gradient': 'linear-gradient(to right, #a4d4dc, #b14f8c, #4bb6e7)',
 			},
 			fontFamily: {
 				'fredoka': ['"Fredoka One"', 'cursive'],
 				'inter': ['Inter', 'sans-serif'],
+				'nunito': ['Nunito', 'sans-serif'],
+				'outfit': ['Outfit', 'sans-serif'],
 			}
 		}
 	},

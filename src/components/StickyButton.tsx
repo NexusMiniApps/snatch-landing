@@ -31,7 +31,7 @@ const StickyButton: React.FC = () => {
         <span className={`absolute inset-0 bg-gradient-to-r from-snatch-yellow via-snatch-pink to-snatch-purple opacity-0 transition-opacity duration-700 ${isHovered ? 'opacity-20' : ''}`}></span>
         <div className="relative z-10 flex items-center gap-2">
           <PartyPopper className={`${isHovered ? 'text-white' : 'text-snatch-darkpurple'}`} size={isMobile ? 16 : 20} />
-          <span className="font-bold">{isHovered ? 'Let\'s Party!' : 'Try Snatch!'}</span>
+          <span className="font-bold font-outfit">{isHovered ? 'Let\'s Party!' : 'Try Snatch!'}</span>
         </div>
       </div>
     </a>

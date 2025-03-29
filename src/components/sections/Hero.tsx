@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { PartyPopper, Sparkles } from 'lucide-react';
 import CountdownTimer from '../CountdownTimer';
@@ -42,7 +41,9 @@ const Hero: React.FC = () => {
         
         <a 
           id="cta"
-          href="#what-is-snatch" 
+          href="http://snatch.events/" 
+          target="_blank"
+          rel="noopener noreferrer"
           className="btn-cta inline-flex items-center gap-2 glow-effect"
         >
           <Sparkles className="text-snatch-darkpurple" size={isMobile ? 16 : 20} />

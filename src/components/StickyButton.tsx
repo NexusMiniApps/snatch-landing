@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { PartyPopper } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -9,7 +8,6 @@ const StickyButton: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   
   useEffect(() => {
-    // Add a slight delay for the button to appear
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 2000);
@@ -19,7 +17,9 @@ const StickyButton: React.FC = () => {
   
   return (
     <a 
-      href="#cta" 
+      href="http://snatch.events/"
+      target="_blank"
+      rel="noopener noreferrer"
       className={`sticky-cta flex items-center gap-2 transition-all duration-500 ease-in-out ${
         isMobile ? 'scale-90' : ''} ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'

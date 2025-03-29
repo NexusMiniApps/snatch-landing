@@ -34,52 +34,75 @@ const Problem: React.FC = () => {
       <div className="wavy-divider absolute top-0 left-0 w-full"></div>
       
       <div className="container mx-auto max-w-6xl">
-        <div className={`space-y-12 transition-all duration-700 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          {/* Text Content - Matches the image */}
-          <div className="text-white max-w-5xl mx-auto space-y-8">
-            <p className="text-white text-xl md:text-2xl leading-relaxed">
-              Traditional launches are snooze-fests—buy, leave, forget. Our research shows 88% of people crave more fun, but brands miss the mark on building real connections.
-            </p>
-            <p className="text-white text-xl md:text-2xl leading-relaxed">
-              It's like hosting a party where everyone leaves early. Let's change that!
-            </p>
+        <h2 className={`section-title transition-all duration-700 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          Why Launches Need a Party Vibe
+        </h2>
+        
+        <div className="grid md:grid-cols-5 gap-8 items-center">
+          <div className={`md:col-span-3 transition-all duration-700 delay-200 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            <div className="space-y-6">
+              <p className="text-white text-lg leading-relaxed">
+                Traditional launches are snooze-fests—buy, leave, forget. Our research shows 88% of people crave more fun, but brands miss the mark on building real connections.
+              </p>
+              <p className="text-white text-lg leading-relaxed">
+                It's like hosting a party where everyone leaves early. Let's change that!
+              </p>
+            </div>
+            
+            <div className="mt-10 bg-white/10 backdrop-blur-md p-6 rounded-xl border border-snatch-pink/20">
+              <div className="flex justify-between text-white mb-8">
+                <span className="font-medium">Engagement</span>
+                <span className="font-medium">Customer Loyalty</span>
+                <span className="font-medium">Brand Memory</span>
+              </div>
+              
+              <div className="flex gap-6 items-end">
+                <div className="flex-1 flex flex-col items-center">
+                  <div className="mb-3 font-bold text-xl text-white">23%</div>
+                  <div className="h-16 w-full bg-snatch-pink/30 relative rounded-t-md"></div>
+                </div>
+                <div className="flex-1 flex flex-col items-center">
+                  <div className="mb-3 font-bold text-xl text-white">35%</div>
+                  <div className="h-24 w-full bg-snatch-pink/30 relative rounded-t-md"></div>
+                </div>
+                <div className="flex-1 flex flex-col items-center">
+                  <div className="mb-3 font-bold text-xl text-white">18%</div>
+                  <div className="h-12 w-full bg-snatch-pink/30 relative rounded-t-md"></div>
+                </div>
+              </div>
+              <div className="text-center text-white/70 text-sm mt-4 pt-2 border-t border-white/10">
+                Traditional Product Launches
+              </div>
+            </div>
           </div>
           
-          {/* Stats Card - Closely matching the image */}
-          <div className="bg-snatch-darkpurple/80 backdrop-blur-md rounded-3xl overflow-hidden border border-snatch-purple/20 shadow-[0_0_30px_rgba(91,59,215,0.1)]">
-            <div className="p-8 md:p-12">
-              {/* Stats Headers */}
-              <div className="grid grid-cols-3 gap-4 mb-8 text-center">
-                <div>
-                  <h3 className="text-white text-lg md:text-2xl font-medium">Engagement</h3>
-                </div>
-                <div>
-                  <h3 className="text-white text-lg md:text-2xl font-medium">Customer Loyalty</h3>
-                </div>
-                <div>
-                  <h3 className="text-white text-lg md:text-2xl font-medium">Brand Memory</h3>
-                </div>
-              </div>
-              
-              {/* Stats Values and Bars */}
-              <div className="grid grid-cols-3 gap-8 items-end">
-                <div className="flex flex-col items-center">
-                  <div className="mb-4 font-bold text-3xl md:text-5xl text-white">23%</div>
-                  <div className="h-32 md:h-40 w-full bg-snatch-purple/60 rounded-md"></div>
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="mb-4 font-bold text-3xl md:text-5xl text-white">35%</div>
-                  <div className="h-48 md:h-64 w-full bg-snatch-purple/60 rounded-md"></div>
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="mb-4 font-bold text-3xl md:text-5xl text-white">18%</div>
-                  <div className="h-24 md:h-32 w-full bg-snatch-purple/60 rounded-md"></div>
-                </div>
-              </div>
-              
-              {/* Bottom Label */}
-              <div className="mt-8 pt-4 border-t border-white/10 text-center">
-                <span className="text-white/70 text-lg">Traditional Product Launches</span>
+          <div className={`md:col-span-2 transition-all duration-700 delay-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            <div className="relative rounded-lg overflow-hidden shadow-[0_0_20px_rgba(236,72,153,0.2)] border border-snatch-pink/20 animate-bounce-subtle animation-delay-200">
+              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+                <h3 className="text-snatch-yellow font-fredoka text-xl mb-6">The Launch Problem</h3>
+                
+                <ul className="space-y-5">
+                  <li className="flex items-start gap-3">
+                    <span className="text-snatch-pink font-bold text-xl">✘</span>
+                    <span className="text-white">Low engagement that drops quickly</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-snatch-pink font-bold text-xl">✘</span>
+                    <span className="text-white">Minimal brand memory after the event</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-snatch-pink font-bold text-xl">✘</span>
+                    <span className="text-white">No real connection with customers</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-snatch-pink font-bold text-xl">✘</span>
+                    <span className="text-white">Boring, forgettable experiences</span>
+                  </li>
+                  <li className="flex items-start gap-3 mt-8">
+                    <span className="text-snatch-yellow font-bold text-xl">✓</span>
+                    <span className="text-snatch-yellow font-bold">Snatch! solves all of these!</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

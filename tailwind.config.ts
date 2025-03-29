@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -40,6 +39,18 @@ export default {
           lightblue: "#a4d4dc",
           cream: "#efce99",
           orange: "#dba663",
+        },
+        ghibli: {
+          green: "#4d774e",
+          sage: "#8a9a5b",
+          cream: "#fef7cd",
+          orange: "#d96a4f",
+          blue: "#a4d4dc",
+          brown: "#9d8171",
+          tan: "#fde1d3",
+          darkgreen: "#1a3c2b",
+          lightblue: "#d3e4fd",
+          softgreen: "#f2fce2",
         },
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
@@ -175,6 +186,27 @@ export default {
 					'100%': {
 						transform: 'translateX(100%)'
 					}
+				},
+				'leaf-fall': {
+					'0%': {
+						transform: 'translateY(-10%) rotate(0deg)',
+						opacity: '0'
+					},
+					'10%': {
+						opacity: '1'
+					},
+					'100%': {
+						transform: 'translateY(100vh) rotate(360deg)',
+						opacity: '0'
+					}
+				},
+				'gentle-sway': {
+					'0%, 100%': {
+						transform: 'translateX(0)'
+					},
+					'50%': {
+						transform: 'translateX(20px)'
+					}
 				}
 			},
 			animation: {
@@ -188,6 +220,8 @@ export default {
 				'ping-slow': 'ping-slow 3s ease-in-out infinite',
 				'float-slow': 'float-slow 6s ease-in-out infinite',
 				'shimmer': 'shimmer 2.5s ease-in-out infinite',
+				'leaf-fall': 'leaf-fall 10s linear infinite',
+				'gentle-sway': 'gentle-sway 6s ease-in-out infinite'
 			},
 			backgroundImage: {
 				'gradient-party': 'linear-gradient(135deg, #1E1B4B, #3B0764)',
@@ -195,6 +229,8 @@ export default {
 				'partiful-gradient': 'linear-gradient(to right, #a4d4dc, #b14f8c, #4bb6e7)',
 				'modern-gradient': 'linear-gradient(to right, #EC4899, #8B5CF6, #3B82F6)',
 				'soft-glow': 'radial-gradient(circle at center, rgba(91, 59, 215, 0.3) 0%, rgba(26, 24, 40, 0) 70%)',
+				'ghibli-gradient': 'linear-gradient(to right, #4d774e, #d96a4f, #d3e4fd)',
+				'ghibli-soft': 'linear-gradient(to bottom, rgba(242, 252, 226, 0.7), rgba(211, 228, 253, 0.7))',
 			},
 			fontFamily: {
 				'fredoka': ['"Fredoka One"', 'cursive'],

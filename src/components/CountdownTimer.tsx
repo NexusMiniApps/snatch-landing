@@ -36,17 +36,35 @@ const CountdownTimer: React.FC = () => {
     return () => clearTimeout(timeoutId);
   }, [isActive]);
   
+  const renderNumberWithAfterImage = (num: number | string) => {
+    return (
+      <span className="relative inline-block px-2">
+        {typeof num === 'number' && num > 0 && (
+          <span className="absolute inset-0 flex justify-center text-snatch-pink/30 animate-ping-slow">
+            {num}
+          </span>
+        )}
+        <span className="relative z-10">{num}</span>
+      </span>
+    );
+  };
+  
   if (count === 0) {
     return (
-      <div className="inline-block animate-countdown text-snatch-yellow font-fredoka text-3xl md:text-5xl lg:text-6xl glow-effect">
-        Launch!
+      <div className="inline-block text-snatch-yellow font-fredoka text-3xl md:text-5xl lg:text-6xl">
+        <span className="glow-text">Launch!</span>
+        <span className="absolute inset-0 animate-ping-slow opacity-30 text-snatch-pink blur-sm">Launch!</span>
       </div>
     );
   }
   
   return (
-    <div className="inline-block animate-countdown text-snatch-yellow font-fredoka text-3xl md:text-5xl lg:text-6xl">
-      {isMobile ? `Launch in ${count}...` : `Next Launch in ${count}...`}
+    <div className="inline-block text-snatch-yellow font-fredoka text-3xl md:text-5xl lg:text-6xl relative">
+      {isMobile ? (
+        <>Launch in {renderNumberWithAfterImage(count)}...</>
+      ) : (
+        <>Next Launch in {renderNumberWithAfterImage(count)}...</>
+      )}
     </div>
   );
 };

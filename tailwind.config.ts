@@ -134,6 +134,28 @@ export default {
 					'50%': {
 						transform: 'scale(1.2)'
 					}
+				},
+				'ping-slow': {
+					'0%': {
+						transform: 'scale(1)',
+						opacity: '0.5'
+					},
+					'50%': {
+						transform: 'scale(1.2)',
+						opacity: '0.1'
+					},
+					'100%': {
+						transform: 'scale(1)',
+						opacity: '0.5'
+					}
+				},
+				'float-slow': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-15px)'
+					}
 				}
 			},
 			animation: {
@@ -143,10 +165,12 @@ export default {
 				'pulse-scale': 'pulse-scale 2s ease-in-out infinite',
 				'fade-up': 'fade-up 0.5s ease-out',
 				'sparkle': 'sparkle 3s ease-in-out infinite',
-				'countdown': 'countdown 1s ease-in-out infinite'
+				'countdown': 'countdown 1s ease-in-out infinite',
+				'ping-slow': 'ping-slow 3s ease-in-out infinite',
+				'float-slow': 'float-slow 6s ease-in-out infinite'
 			},
 			backgroundImage: {
-				'gradient-party': 'linear-gradient(to bottom, #1E1B4B, #3B0764)',
+				'gradient-party': 'linear-gradient(135deg, #1E1B4B, #3B0764)',
 			},
 			fontFamily: {
 				'fredoka': ['"Fredoka One"', 'cursive'],

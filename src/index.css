@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,19 +39,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -97,5 +94,79 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+.wavy-divider {
+  position: relative;
+  height: 70px;
+  overflow: hidden;
+}
+
+.wavy-divider::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-image: 
+    radial-gradient(circle at 20px -10px, transparent 20px, #EC4899 20px);
+  background-size: 40px 40px;
+  background-position: center;
+}
+
+@layer components {
+  .btn-cta {
+    @apply bg-snatch-yellow text-snatch-darkpurple font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 hover:bg-opacity-90;
+  }
+  
+  .section-title {
+    @apply font-fredoka text-3xl md:text-4xl text-snatch-purple mb-6 md:mb-8 animate-bounce-subtle;
+  }
+  
+  .feature-card {
+    @apply bg-white/10 backdrop-blur-md p-6 rounded-xl hover:shadow-[0_0_15px_rgba(236,72,153,0.5)] transition-all duration-300;
+  }
+  
+  .sparkle {
+    @apply absolute w-1.5 h-1.5 rounded-full bg-white/70 animate-sparkle;
+  }
+}
+
+.bg-stars {
+  background-color: transparent;
+  background-image: radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 8px);
+  background-size: 100px 100px;
+  background-position: 0 0, 50px 50px;
+}
+
+/* Confetti styles */
+#confetti-canvas {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Sticky CTA button */
+.sticky-cta {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 50;
+}
+
+@media (max-width: 640px) {
+  .wavy-divider {
+    height: 50px;
+  }
+  
+  .wavy-divider::before {
+    height: 30px;
+    background-size: 30px 30px;
   }
 }

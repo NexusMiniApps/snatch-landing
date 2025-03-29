@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -24,6 +25,13 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				snatch: {
+					purple: "#A855F7",
+					pink: "#EC4899",
+					yellow: "#FDE047",
+					darkblue: "#1E1B4B",
+					darkpurple: "#3B0764",
+				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -84,11 +92,65 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'bounce-subtle': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'pulse-scale': {
+					'0%, 100%': {
+						transform: 'scale(1)'
+					},
+					'50%': {
+						transform: 'scale(1.1)'
+					}
+				},
+				'fade-up': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'sparkle': {
+					'0%, 100%': {
+						opacity: '0.2'
+					},
+					'50%': {
+						opacity: '1'
+					}
+				},
+				'countdown': {
+					'0%, 100%': {
+						transform: 'scale(1)'
+					},
+					'50%': {
+						transform: 'scale(1.2)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'bounce-subtle': 'bounce-subtle 2s ease-in-out infinite',
+				'pulse-scale': 'pulse-scale 2s ease-in-out infinite',
+				'fade-up': 'fade-up 0.5s ease-out',
+				'sparkle': 'sparkle 3s ease-in-out infinite',
+				'countdown': 'countdown 1s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'gradient-party': 'linear-gradient(to bottom, #1E1B4B, #3B0764)',
+			},
+			fontFamily: {
+				'fredoka': ['"Fredoka One"', 'cursive'],
+				'inter': ['Inter', 'sans-serif'],
 			}
 		}
 	},

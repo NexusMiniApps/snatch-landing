@@ -61,8 +61,8 @@ const WhatIsSnatch: React.FC = () => {
           <div className={`relative transition-all duration-700 delay-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <div className="relative rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(236,72,153,0.3)] border border-snatch-pink/30 hover:shadow-[0_0_60px_rgba(236,72,153,0.4)] transition-all duration-500">
               <img 
-                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
-                alt="Snatch! Game Interface"
+                src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1470&auto=format&fit=crop" 
+                alt="Exciting product launch event"
                 className="w-full h-auto"
                 loading="lazy"
               />

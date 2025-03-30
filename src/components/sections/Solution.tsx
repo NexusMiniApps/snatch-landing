@@ -133,8 +133,8 @@ const Solution: React.FC = () => {
               <div className="md:w-1/2 bg-gradient-to-br from-snatch-purple/20 to-partiful-purple/10 p-4 md:p-6">
                 <div className="relative h-full min-h-[300px] md:min-h-[350px] rounded-lg overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7" 
-                    alt="Snatch! Leaderboard" 
+                    src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1470&auto=format&fit=crop" 
+                    alt="Interactive Leaderboard Experience" 
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />

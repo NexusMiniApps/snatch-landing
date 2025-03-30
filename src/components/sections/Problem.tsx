@@ -32,10 +32,20 @@ const Problem: React.FC = () => {
       ref={sectionRef}
       className="relative py-20 px-4 bg-gradient-to-b from-snatch-darkpurple/50 to-snatch-darkblue/50 backdrop-blur-sm overflow-hidden"
     >
-      {/* Enhanced decorative elements */}
+      {/* Enhanced decorative elements with subtle image backgrounds */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
         <div className="absolute -top-20 -left-20 w-40 h-40 rounded-full bg-partiful-purple/10 blur-3xl animate-float-slow"></div>
         <div className="absolute top-40 -right-20 w-60 h-60 rounded-full bg-snatch-pink/10 blur-3xl animate-float-slow animation-delay-1000"></div>
+        
+        {/* Abstract image patterns with low opacity */}
+        <div className="absolute top-10 right-10 w-64 h-64 opacity-5">
+          <img 
+            src="https://images.unsplash.com/photo-1573152958734-1922c188fba3?q=80&w=1470&auto=format&fit=crop" 
+            alt="" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        
         {/* Subtle floating particles */}
         <div className="absolute bottom-20 left-1/4 w-2 h-2 rounded-full bg-snatch-yellow/40 animate-pulse-scale"></div>
         <div className="absolute top-40 left-3/4 w-3 h-3 rounded-full bg-partiful-purple/30 animate-pulse-scale animation-delay-700"></div>
@@ -56,8 +66,17 @@ const Problem: React.FC = () => {
         </div>
         
         <div className={`bg-white/5 backdrop-blur-md p-8 rounded-xl border border-snatch-pink/20 shadow-glow-pink transition-all duration-500 relative overflow-hidden group ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+          {/* Background pattern with image */}
+          <div className="absolute inset-0 opacity-5 z-0 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1470&auto=format&fit=crop" 
+              alt="" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          
           {/* Subtle gradient overlay that animates on hover */}
-          <div className="absolute inset-0 bg-gradient-to-r from-partiful-purple/5 via-snatch-pink/5 to-partiful-purple/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-partiful-purple/5 via-snatch-pink/5 to-partiful-purple/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0"></div>
           
           <div className="flex justify-center gap-16 lg:gap-24 text-white mb-12 relative z-10">
             <div className="flex flex-col items-center transform transition-transform duration-300 hover:scale-105">

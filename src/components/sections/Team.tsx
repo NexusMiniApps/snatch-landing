@@ -2,12 +2,12 @@
 import React, { useRef, useState, useEffect } from 'react';
 
 const teamMembers = [
-  { name: "Lim Sheng Xiang", id: "1005005" },
-  { name: "Joseph Low", id: "1005013" },
-  { name: "Chia Yong Kang", id: "1005121" },
-  { name: "Janessa Yang Jiajing", id: "1006086" },
-  { name: "Tee Zhi Zhang", id: "1005136" },
-  { name: "Ryan Pey Jun Hao", id: "1006048" },
+  { name: "Lim Sheng Xiang", id: "1005005", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1470&auto=format&fit=crop" },
+  { name: "Joseph Low", id: "1005013", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1374&auto=format&fit=crop" },
+  { name: "Chia Yong Kang", id: "1005121", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop" },
+  { name: "Janessa Yang Jiajing", id: "1006086", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1470&auto=format&fit=crop" },
+  { name: "Tee Zhi Zhang", id: "1005136", image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop" },
+  { name: "Ryan Pey Jun Hao", id: "1006048", image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1374&auto=format&fit=crop" },
 ];
 
 const Team: React.FC = () => {
@@ -60,8 +60,13 @@ const Team: React.FC = () => {
               className={`bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-snatch-purple/20 text-center transition-all duration-700 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
               style={{ transitionDelay: `${300 + index * 100}ms` }}
             >
-              <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-snatch-purple to-snatch-pink mb-4 flex items-center justify-center text-white text-2xl font-bold">
-                {member.name.charAt(0)}
+              <div className="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 border-2 border-snatch-pink/30">
+                <img 
+                  src={member.image} 
+                  alt={member.name}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
               <h3 className="text-white font-bold mb-1">{member.name}</h3>
               <p className="text-white/70 text-sm">{member.id}</p>

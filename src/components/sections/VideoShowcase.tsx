@@ -31,6 +31,9 @@ const VideoShowcase: React.FC = () => {
     };
   }, []);
 
+  // Background images for decorative purposes
+  const bgImage1 = "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e?q=80&w=1470&auto=format&fit=crop"; // Celebratory image
+
   return (
     <section 
       id="video-showcase" 
@@ -38,6 +41,11 @@ const VideoShowcase: React.FC = () => {
       className="relative py-16 md:py-24 px-4 section-transition"
     >
       <div className="wavy-divider absolute top-0 left-0 w-full opacity-70"></div>
+      
+      {/* Decorative background elements */}
+      <div className="absolute top-1/4 right-0 w-32 h-32 md:w-48 md:h-48 rounded-full opacity-10 overflow-hidden">
+        <img src={bgImage1} alt="" className="w-full h-full object-cover" />
+      </div>
       
       <div className="container mx-auto max-w-5xl">
         <h2 className={`section-title text-center md:text-left transition-all duration-700 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
@@ -104,7 +112,7 @@ const VideoShowcase: React.FC = () => {
         </div>
       </div>
       
-      {/* Background decoration */}
+      {/* Updated background decoration */}
       <div className="absolute -bottom-24 -right-24 w-64 h-64 rounded-full bg-partiful-purple/10 blur-3xl"></div>
       <div className="absolute -top-24 -left-24 w-64 h-64 rounded-full bg-partiful-pink/10 blur-3xl"></div>
     </section>

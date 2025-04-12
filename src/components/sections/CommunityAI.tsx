@@ -129,7 +129,7 @@ const CommunityAI: React.FC = () => {
             <div className="relative mx-auto max-w-[160px]">
               <div className="relative rounded-3xl overflow-hidden border-4 border-[#383838] shadow-2xl">
                 <img 
-                  src="/lovable-uploads/bf838491-45d5-4e94-a1f1-d58cecc389b3.png" 
+                  src="/lovable-uploads/96c2e09c-c6e1-4294-9da2-0796522e47e9.png" 
                   alt="Snatch! Community AI Feature on mobile" 
                   className="w-full h-auto"
                   loading="eager"

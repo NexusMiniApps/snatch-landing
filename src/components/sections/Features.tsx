@@ -97,6 +97,7 @@ const Features: React.FC = () => {
                   src="https://imgur.com/8oIdKxm.gif" 
                   alt="Skill Based Games" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="eager"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-snatch-darkpurple/90 via-snatch-darkpurple/40 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 w-full p-4">
@@ -124,6 +125,7 @@ const Features: React.FC = () => {
                   src="https://imgur.com/OvIO2ik.gif" 
                   alt="Raffle Mode" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="eager"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-snatch-darkpurple/90 via-snatch-darkpurple/40 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 w-full p-4">
@@ -151,6 +153,7 @@ const Features: React.FC = () => {
                   src="https://imgur.com/TVDFpl3.gif" 
                   alt="Host Chosen Mode" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="eager"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-snatch-darkpurple/90 via-snatch-darkpurple/40 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 w-full p-4">

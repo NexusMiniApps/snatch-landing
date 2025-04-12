@@ -1,8 +1,11 @@
-
 import React, { useRef, useState, useEffect } from 'react';
 
 const teamMembers = [
-  { name: "Lim Sheng Xiang", id: "1005005", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1470&auto=format&fit=crop" },
+  { 
+    name: "Lim Sheng Xiang", 
+    id: "1005005", 
+    image: "/lovable-uploads/f336beb8-bf00-4383-ac8f-dafd73d842a0.png" 
+  },
   { 
     name: "Joseph Low", 
     id: "1005013", 

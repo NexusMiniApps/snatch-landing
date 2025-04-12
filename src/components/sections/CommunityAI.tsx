@@ -1,4 +1,3 @@
-
 import React, { useRef, useState, useEffect } from 'react';
 import { Bot, ThumbsUp, Filter, Clock, Users } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -128,9 +127,8 @@ const CommunityAI: React.FC = () => {
           
           <div className={`transition-all duration-700 delay-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <div className="backdrop-blur-card p-6 h-full border border-snatch-pink/20 rounded-xl hover:border-snatch-pink/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(236,72,153,0.2)]">
-              {/* Floating phone mockup */}
-              <div className="relative mx-auto max-w-[320px] float-animation">
-                <div className="relative rounded-3xl overflow-hidden border-8 border-[#383838] shadow-2xl">
+              <div className="relative mx-auto max-w-[160px]">
+                <div className="relative rounded-3xl overflow-hidden border-4 border-[#383838] shadow-2xl">
                   <img 
                     src="/lovable-uploads/057937c7-078d-42d8-9b1a-fb3f54ac9323.png" 
                     alt="Snatch! Community AI Feature on mobile" 
@@ -138,13 +136,11 @@ const CommunityAI: React.FC = () => {
                     loading="eager"
                   />
                   
-                  {/* Subtle phone overlay including notch */}
                   <div className="absolute top-0 left-0 right-0 h-6 bg-[#383838] rounded-t-lg flex justify-center items-center">
                     <div className="w-24 h-4 bg-black rounded-b-xl"></div>
                   </div>
                 </div>
                 
-                {/* Decorative elements */}
                 <div className="absolute -top-5 -right-5 bg-snatch-yellow text-snatch-darkpurple font-bold py-2 px-4 rounded-full transform rotate-12 shadow-xl text-sm">
                   Save 75% Time!
                 </div>
@@ -156,7 +152,6 @@ const CommunityAI: React.FC = () => {
                 </div>
               </div>
               
-              {/* Time saved metrics - below the phone */}
               <div className="mt-16 bg-white/5 backdrop-blur-md rounded-xl p-6 border border-snatch-pink/20">
                 <h3 className="text-center text-snatch-pink font-fredoka text-xl mb-6">Time Saved with AI</h3>
                 

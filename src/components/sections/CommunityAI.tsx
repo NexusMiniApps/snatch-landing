@@ -1,6 +1,8 @@
+
 import React, { useRef, useState, useEffect } from 'react';
 import { Bot, ThumbsUp, Filter, Clock, Users } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const CommunityAI: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -126,14 +128,16 @@ const CommunityAI: React.FC = () => {
           </div>
           
           <div className={`transition-all duration-700 delay-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <div className="relative mx-auto max-w-[160px]">
+            <div className="relative mx-auto max-w-[300px] md:max-w-[350px]">
               <div className="relative rounded-3xl overflow-hidden border-4 border-[#383838] shadow-2xl">
-                <img 
-                  src="/lovable-uploads/96c2e09c-c6e1-4294-9da2-0796522e47e9.png" 
-                  alt="Snatch! Community AI Feature on mobile" 
-                  className="w-full h-auto"
-                  loading="eager"
-                />
+                <AspectRatio ratio={9/16} className="bg-black">
+                  <img 
+                    src="/lovable-uploads/96c2e09c-c6e1-4294-9da2-0796522e47e9.png" 
+                    alt="Snatch! Community AI Feature on mobile" 
+                    className="w-full h-full object-cover object-center"
+                    loading="eager"
+                  />
+                </AspectRatio>
                 
                 <div className="absolute top-0 left-0 right-0 h-6 bg-[#383838] rounded-t-lg flex justify-center items-center">
                   <div className="w-24 h-4 bg-black rounded-b-xl"></div>

@@ -8,6 +8,7 @@ import VideoShowcase from '@/components/sections/VideoShowcase';
 import Problem from '@/components/sections/Problem';
 import Solution from '@/components/sections/Solution';
 import Features from '@/components/sections/Features';
+import CommunityAI from '@/components/sections/CommunityAI';
 import Team from '@/components/sections/Team';
 import Acknowledgments from '@/components/sections/Acknowledgments';
 import Footer from '@/components/Footer';
@@ -72,6 +73,8 @@ const Index = () => {
         <div className="section-divider bg-gradient-to-b from-partiful-dark to-partiful-dark/90"></div>
         <Features />
         <div className="section-divider bg-gradient-to-b from-partiful-dark/90 to-partiful-dark"></div>
+        <CommunityAI />
+        <div className="section-divider bg-gradient-to-b from-partiful-dark to-partiful-dark/90"></div>
         <Team />
         <div className="section-divider bg-gradient-to-b from-partiful-dark to-partiful-dark/90"></div>
         <Acknowledgments />

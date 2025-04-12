@@ -1,3 +1,4 @@
+
 import React, { useRef, useState, useEffect } from 'react';
 import { Gamepad2, Trophy, Clock, Bot, PartyPopper, Medal, Ticket, UserRound } from 'lucide-react';
 
@@ -90,12 +91,12 @@ const Features: React.FC = () => {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white/5 backdrop-blur-md rounded-xl border border-snatch-pink/20 overflow-hidden group hover:border-snatch-pink/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(236,72,153,0.2)]">
               <div className="h-48 relative overflow-hidden">
-                <img 
+                <video 
                   src="https://imgur.com/8oIdKxm.gif" 
-                  alt="Skill Based Games" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   autoPlay
                   loop
+                  muted
                   playsInline
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-snatch-darkpurple/90 via-snatch-darkpurple/40 to-transparent"></div>
@@ -119,12 +120,12 @@ const Features: React.FC = () => {
             
             <div className="bg-white/5 backdrop-blur-md rounded-xl border border-snatch-pink/20 overflow-hidden group hover:border-snatch-pink/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(236,72,153,0.2)]">
               <div className="h-48 relative overflow-hidden">
-                <img 
+                <video 
                   src="https://imgur.com/OvIO2ik.gif" 
-                  alt="Raffle Mode" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   autoPlay
                   loop
+                  muted
                   playsInline
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-snatch-darkpurple/90 via-snatch-darkpurple/40 to-transparent"></div>
@@ -148,12 +149,12 @@ const Features: React.FC = () => {
             
             <div className="bg-white/5 backdrop-blur-md rounded-xl border border-snatch-pink/20 overflow-hidden group hover:border-snatch-pink/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(236,72,153,0.2)]">
               <div className="h-48 relative overflow-hidden">
-                <img 
+                <video 
                   src="https://imgur.com/TVDFpl3.gif" 
-                  alt="Host Chosen Mode" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   autoPlay
                   loop
+                  muted
                   playsInline
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-snatch-darkpurple/90 via-snatch-darkpurple/40 to-transparent"></div>

@@ -1,0 +1,75 @@
+
+import React from 'react';
+import { PartyPopper } from 'lucide-react';
+
+interface PoweredByProps {
+  isVisible: boolean;
+}
+
+const PoweredBy: React.FC<PoweredByProps> = ({ isVisible }) => {
+  return (
+    <div className={`bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-snatch-pink/20 transition-all duration-700 delay-600 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+      <h3 className="text-center text-snatch-pink font-fredoka text-2xl mb-6">Powered By</h3>
+      
+      <div className="flex flex-wrap justify-center gap-8 items-center">
+        <TechItem label="For speed">
+          <svg className="h-12 w-12 text-white group-hover:scale-110 transition-transform duration-300" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_408_134" style={{ maskType: 'alpha' }} maskUnits="userSpaceOnUse" x="0" y="0" width="180" height="180">
+              <circle cx="90" cy="90" r="90" fill="black" />
+            </mask>
+            <g mask="url(#mask0_408_134)">
+              <circle cx="90" cy="90" r="87" fill="black" stroke="white" strokeWidth="6" />
+              <path d="M149.508 157.259L69.6578 54H54V125.593H65.7333V69.3741L138.119 162.481C142.439 160.858 146.577 158.855 150.492 156.511L149.508 157.259Z" fill="url(#paint0_linear_408_134)" />
+              <path d="M127.275 54H115.509V126H127.275V54Z" fill="url(#paint1_linear_408_134)" />
+            </g>
+            <defs>
+              <linearGradient id="paint0_linear_408_134" x1="102.246" y1="108.246" x2="145.246" y2="159.746" gradientUnits="userSpaceOnUse">
+                <stop stopColor="white" />
+                <stop offset="1" stopColor="white" stopOpacity="0" />
+              </linearGradient>
+              <linearGradient id="paint1_linear_408_134" x1="121.387" y1="54" x2="121.198" y2="106.5" gradientUnits="userSpaceOnUse">
+                <stop stopColor="white" />
+                <stop offset="1" stopColor="white" stopOpacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </TechItem>
+        
+        <TechItem label="For live action">
+          <PartyPopper className="text-white h-10 w-10 group-hover:scale-110 transition-transform duration-300" />
+        </TechItem>
+        
+        <TechItem label="For smooth data">
+          <svg className="h-12 w-12 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 109 109" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M54.5 0C24.4 0 0 24.4 0 54.5C0 84.6 24.4 109 54.5 109C84.6 109 109 84.6 109 54.5C109 24.4 84.6 0 54.5 0ZM54.5 106.1C26 106.1 2.9 83 2.9 54.5C2.9 26 26 2.9 54.5 2.9C83 2.9 106.1 26 106.1 54.5C106.1 83 83 106.1 54.5 106.1Z" fill="white" />
+            <path d="M42.8 41.4C42.8 44.5 40.3 47 37.2 47C34.1 47 31.6 44.5 31.6 41.4C31.6 38.3 34.1 35.8 37.2 35.8C40.3 35.8 42.8 38.3 42.8 41.4Z" fill="white" />
+            <path d="M86.8 39.8C86.2 39.7 85.5 39.7 84.9 39.7C75.8 39.8 69.9 45.5 69.9 54.5V77.3H73V54.5C73 47 77.6 42.7 84.9 42.7C85.5 42.7 86.1 42.7 86.7 42.8V39.8H86.8Z" fill="white" />
+            <path d="M59.5 57.9C59.5 65.4 53.1 71.5 45.5 71.5C37.9 71.5 31.6 65.4 31.6 57.9V35.7H28.5V57.9C28.5 67.2 36.1 74.5 45.5 74.5C54.9 74.5 62.5 67.1 62.5 57.9V35.7H59.5V57.9Z" fill="white" />
+          </svg>
+        </TechItem>
+      </div>
+      
+      <div className="text-center mt-6 text-white/70">
+        Ready for any crowd!
+      </div>
+    </div>
+  );
+};
+
+interface TechItemProps {
+  label: string;
+  children: React.ReactNode;
+}
+
+const TechItem: React.FC<TechItemProps> = ({ label, children }) => {
+  return (
+    <div className="text-center">
+      <div className="bg-white/10 h-20 w-20 rounded-full flex items-center justify-center mx-auto mb-2 relative overflow-hidden group transition-all duration-300 hover:bg-white/20">
+        {children}
+      </div>
+      <span className="text-white text-sm">{label}</span>
+    </div>
+  );
+};
+
+export default PoweredBy;

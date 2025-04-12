@@ -126,80 +126,78 @@ const CommunityAI: React.FC = () => {
           </div>
           
           <div className={`transition-all duration-700 delay-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <div className="backdrop-blur-card p-6 h-full border border-snatch-pink/20 rounded-xl hover:border-snatch-pink/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(236,72,153,0.2)]">
-              <div className="relative mx-auto max-w-[160px]">
-                <div className="relative rounded-3xl overflow-hidden border-4 border-[#383838] shadow-2xl">
-                  <img 
-                    src="/lovable-uploads/057937c7-078d-42d8-9b1a-fb3f54ac9323.png" 
-                    alt="Snatch! Community AI Feature on mobile" 
-                    className="w-full h-auto"
-                    loading="eager"
-                  />
-                  
-                  <div className="absolute top-0 left-0 right-0 h-6 bg-[#383838] rounded-t-lg flex justify-center items-center">
-                    <div className="w-24 h-4 bg-black rounded-b-xl"></div>
-                  </div>
-                </div>
+            <div className="relative mx-auto max-w-[160px]">
+              <div className="relative rounded-3xl overflow-hidden border-4 border-[#383838] shadow-2xl">
+                <img 
+                  src="/lovable-uploads/bf838491-45d5-4e94-a1f1-d58cecc389b3.png" 
+                  alt="Snatch! Community AI Feature on mobile" 
+                  className="w-full h-auto"
+                  loading="eager"
+                />
                 
-                <div className="absolute -top-5 -right-5 bg-snatch-yellow text-snatch-darkpurple font-bold py-2 px-4 rounded-full transform rotate-12 shadow-xl text-sm">
-                  Save 75% Time!
-                </div>
-                
-                <div className="absolute -bottom-4 -left-4">
-                  <div className="bg-snatch-pink/10 p-3 rounded-full backdrop-blur-md border border-snatch-pink/20">
-                    <Bot className="text-snatch-pink animate-pulse" size={isMobile ? 20 : 24} />
-                  </div>
+                <div className="absolute top-0 left-0 right-0 h-6 bg-[#383838] rounded-t-lg flex justify-center items-center">
+                  <div className="w-24 h-4 bg-black rounded-b-xl"></div>
                 </div>
               </div>
               
-              <div className="mt-16 bg-white/5 backdrop-blur-md rounded-xl p-6 border border-snatch-pink/20">
-                <h3 className="text-center text-snatch-pink font-fredoka text-xl mb-6">Time Saved with AI</h3>
-                
-                <div className="flex justify-center gap-8">
-                  <div className="text-center">
-                    <div className="relative">
-                      <svg className="w-24 h-24" viewBox="0 0 36 36">
-                        <path
-                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                          fill="none"
-                          stroke="rgba(236, 72, 153, 0.2)"
-                          strokeWidth="3"
-                        />
-                        <path
-                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                          fill="none"
-                          stroke="#EC4899"
-                          strokeWidth="3"
-                          strokeDasharray="75, 100"
-                          className="animate-pulse"
-                        />
-                        <text x="18" y="21" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold">75%</text>
-                      </svg>
-                      <p className="text-white text-sm mt-1">Review Time</p>
-                    </div>
+              <div className="absolute -top-5 -right-5 bg-snatch-yellow text-snatch-darkpurple font-bold py-2 px-4 rounded-full transform rotate-12 shadow-xl text-sm">
+                Save 75% Time!
+              </div>
+              
+              <div className="absolute -bottom-4 -left-4">
+                <div className="bg-snatch-pink/10 p-3 rounded-full backdrop-blur-md border border-snatch-pink/20">
+                  <Bot className="text-snatch-pink animate-pulse" size={isMobile ? 20 : 24} />
+                </div>
+              </div>
+            </div>
+            
+            <div className="mt-16 bg-white/5 backdrop-blur-md rounded-xl p-6 border border-snatch-pink/20">
+              <h3 className="text-center text-snatch-pink font-fredoka text-xl mb-6">Time Saved with AI</h3>
+              
+              <div className="flex justify-center gap-8">
+                <div className="text-center">
+                  <div className="relative">
+                    <svg className="w-24 h-24" viewBox="0 0 36 36">
+                      <path
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        fill="none"
+                        stroke="rgba(236, 72, 153, 0.2)"
+                        strokeWidth="3"
+                      />
+                      <path
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        fill="none"
+                        stroke="#EC4899"
+                        strokeWidth="3"
+                        strokeDasharray="75, 100"
+                        className="animate-pulse"
+                      />
+                      <text x="18" y="21" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold">75%</text>
+                    </svg>
+                    <p className="text-white text-sm mt-1">Review Time</p>
                   </div>
-                  
-                  <div className="text-center">
-                    <div className="relative">
-                      <svg className="w-24 h-24" viewBox="0 0 36 36">
-                        <path
-                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                          fill="none"
-                          stroke="rgba(236, 72, 153, 0.2)"
-                          strokeWidth="3"
-                        />
-                        <path
-                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                          fill="none"
-                          stroke="#EC4899"
-                          strokeWidth="3"
-                          strokeDasharray="90, 100"
-                          className="animate-pulse"
-                        />
-                        <text x="18" y="21" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold">90%</text>
-                      </svg>
-                      <p className="text-white text-sm mt-1">Admin Overhead</p>
-                    </div>
+                </div>
+                
+                <div className="text-center">
+                  <div className="relative">
+                    <svg className="w-24 h-24" viewBox="0 0 36 36">
+                      <path
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        fill="none"
+                        stroke="rgba(236, 72, 153, 0.2)"
+                        strokeWidth="3"
+                      />
+                      <path
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        fill="none"
+                        stroke="#EC4899"
+                        strokeWidth="3"
+                        strokeDasharray="90, 100"
+                        className="animate-pulse"
+                      />
+                      <text x="18" y="21" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold">90%</text>
+                    </svg>
+                    <p className="text-white text-sm mt-1">Admin Overhead</p>
                   </div>
                 </div>
               </div>

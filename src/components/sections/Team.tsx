@@ -9,7 +9,7 @@ const teamMembers = [
   { 
     name: "Joseph Low", 
     id: "1005013", 
-    image: "/lovable-uploads/0400d928-8429-43d1-a262-f811cebf2558.png" 
+    image: "/lovable-uploads/0d636b5b-b552-4f11-aa7e-3662ee4345f5.png" 
   },
   { 
     name: "Chia Yong Kang", 

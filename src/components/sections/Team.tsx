@@ -22,7 +22,7 @@ const teamMembers = [
     image: "/lovable-uploads/b76333a9-11a9-4f48-9913-d5701644862f.png" 
   },
   { name: "Tee Zhi Zhang", id: "1005136", image: "/lovable-uploads/da6dce3c-1a74-48ce-ac34-42597854d5bc.png" },
-  { name: "Ryan Pey Jun Hao", id: "1006048", image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1374&auto=format&fit=crop" },
+  { name: "Ryan Pey Jun Hao", id: "1006048", image: "/lovable-uploads/0f0d671b-bb5e-457f-9c58-22536a3485ac.png" },
 ];
 
 const Team: React.FC = () => {

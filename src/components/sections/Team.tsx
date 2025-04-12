@@ -3,7 +3,11 @@ import React, { useRef, useState, useEffect } from 'react';
 
 const teamMembers = [
   { name: "Lim Sheng Xiang", id: "1005005", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1470&auto=format&fit=crop" },
-  { name: "Joseph Low", id: "1005013", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1374&auto=format&fit=crop" },
+  { 
+    name: "Joseph Low", 
+    id: "1005013", 
+    image: "/lovable-uploads/0400d928-8429-43d1-a262-f811cebf2558.png" 
+  },
   { name: "Chia Yong Kang", id: "1005121", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop" },
   { name: "Janessa Yang Jiajing", id: "1006086", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1470&auto=format&fit=crop" },
   { name: "Tee Zhi Zhang", id: "1005136", image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop" },

@@ -56,12 +56,12 @@ const GameModeCard: React.FC<GameModeCardProps> = ({ title, icon, description, t
   return (
     <div className="bg-white/5 backdrop-blur-md rounded-xl border border-snatch-pink/20 overflow-hidden group hover:border-snatch-pink/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(236,72,153,0.2)]">
       <div className="h-48 relative overflow-hidden">
-        {/* Use the direct imgur URL with i.imgur.com instead of imgur.com and ensure no optimization/processing */}
         <img 
           src={gifUrl} 
           alt={`${title} Game Mode`}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          loading="eager"
+          loading="lazy"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-snatch-darkpurple/90 via-snatch-darkpurple/40 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full p-4">

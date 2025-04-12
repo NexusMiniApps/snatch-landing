@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Medal, Ticket, UserRound } from 'lucide-react';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface GameModesProps {
   isVisible: boolean;
@@ -55,25 +56,39 @@ interface GameModeCardProps {
 
 const GameModeCard: React.FC<GameModeCardProps> = ({ title, icon, description, tag, badge, gifUrl }) => {
   const [isLoaded, setIsLoaded] = useState(false);
-
-  // Make sure we're using the direct GIF URL format
-  const enhancedGifUrl = gifUrl.replace('imgur.com', 'i.imgur.com');
+  const [hasError, setHasError] = useState(false);
+  
+  // Ensure we're using the correct GIF URL format with .gif extension
+  const enhancedGifUrl = gifUrl.includes('.gif') ? gifUrl : `${gifUrl}.gif`;
   
   return (
     <div className="bg-white/5 backdrop-blur-md rounded-xl border border-snatch-pink/20 overflow-hidden group hover:border-snatch-pink/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(236,72,153,0.2)]">
       <div className="h-48 relative overflow-hidden">
         <AspectRatio ratio={16/9} className="w-full h-full">
+          {!isLoaded && !hasError && (
+            <div className="absolute inset-0 flex items-center justify-center bg-snatch-darkpurple/30">
+              <div className="animate-ping-slow w-10 h-10 rounded-full bg-snatch-pink/40"></div>
+            </div>
+          )}
+          
           <img 
             src={enhancedGifUrl}
             alt={`${title} Game Mode`}
-            className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
-            loading="eager"
-            decoding="async"
-            onLoad={() => setIsLoaded(true)}
+            className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${isLoaded && !hasError ? 'opacity-100' : 'opacity-0'}`}
+            onLoad={() => {
+              console.log(`GIF loaded successfully: ${enhancedGifUrl}`);
+              setIsLoaded(true);
+            }}
+            onError={() => {
+              console.error(`Failed to load GIF: ${enhancedGifUrl}`);
+              setHasError(true);
+              setIsLoaded(false);
+            }}
           />
-          {!isLoaded && (
-            <div className="absolute inset-0 flex items-center justify-center bg-snatch-darkpurple/30">
-              <div className="animate-pulse w-8 h-8 rounded-full bg-snatch-pink/30"></div>
+          
+          {hasError && (
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-snatch-darkpurple/50 text-snatch-pink">
+              <span className="text-sm">Image unavailable</span>
             </div>
           )}
         </AspectRatio>

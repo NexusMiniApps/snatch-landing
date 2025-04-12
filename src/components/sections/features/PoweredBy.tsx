@@ -40,11 +40,19 @@ const PoweredBy: React.FC<PoweredByProps> = ({ isVisible }) => {
         </TechItem>
         
         <TechItem label="For smooth data">
-          <svg className="h-12 w-12 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 109 109" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M54.5 0C24.4 0 0 24.4 0 54.5C0 84.6 24.4 109 54.5 109C84.6 109 109 84.6 109 54.5C109 24.4 84.6 0 54.5 0ZM54.5 106.1C26 106.1 2.9 83 2.9 54.5C2.9 26 26 2.9 54.5 2.9C83 2.9 106.1 26 106.1 54.5C106.1 83 83 106.1 54.5 106.1Z" fill="white" />
-            <path d="M42.8 41.4C42.8 44.5 40.3 47 37.2 47C34.1 47 31.6 44.5 31.6 41.4C31.6 38.3 34.1 35.8 37.2 35.8C40.3 35.8 42.8 38.3 42.8 41.4Z" fill="white" />
-            <path d="M86.8 39.8C86.2 39.7 85.5 39.7 84.9 39.7C75.8 39.8 69.9 45.5 69.9 54.5V77.3H73V54.5C73 47 77.6 42.7 84.9 42.7C85.5 42.7 86.1 42.7 86.7 42.8V39.8H86.8Z" fill="white" />
-            <path d="M59.5 57.9C59.5 65.4 53.1 71.5 45.5 71.5C37.9 71.5 31.6 65.4 31.6 57.9V35.7H28.5V57.9C28.5 67.2 36.1 74.5 45.5 74.5C54.9 74.5 62.5 67.1 62.5 57.9V35.7H59.5V57.9Z" fill="white" />
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-white group-hover:scale-110 transition-transform duration-300" viewBox="0 0 48 48">
+            <g id="Слой_1">
+              <linearGradient id="SVGID_1" x1="14.073" x2="14.073" y1="8.468" y2="36.033" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stopColor="#7dffce"></stop>
+                <stop offset="1" stopColor="#50c08d"></stop>
+              </linearGradient>
+              <path fill="url(#SVGID_1)" d="M24.2,30V6.3c0-1.8-2.3-2.6-3.4-1.2L4.5,25.9c-1.3,1.7-0.1,4.1,2,4.1H24.2z"></path>
+              <linearGradient id="SVGID_2" x1="34.249" x2="34.249" y1="48.404" y2="19.425" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stopColor="#7dffce"></stop>
+                <stop offset="1" stopColor="#50c08d"></stop>
+              </linearGradient>
+              <path fill="url(#SVGID_2)" d="M24,18.4v23.7c0,1.8,2.4,2.6,3.5,1.2 l16.4-20.7c1.3-1.7,0.1-4.1-2.1-4.1H24z"></path>
+            </g>
           </svg>
         </TechItem>
       </div>
@@ -73,3 +81,4 @@ const TechItem: React.FC<TechItemProps> = ({ label, children }) => {
 };
 
 export default PoweredBy;
+

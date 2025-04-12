@@ -11,8 +11,12 @@ const teamMembers = [
     id: "1005013", 
     image: "/lovable-uploads/0400d928-8429-43d1-a262-f811cebf2558.png" 
   },
-  { name: "Chia Yong Kang", id: "1005121", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop" },
-  { name: "Janessa Yang Jiajing", id: "1006086", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1470&auto=format&fit=crop" },
+  { 
+    name: "Chia Yong Kang", 
+    id: "1005121", 
+    image: "/lovable-uploads/cd4ef521-36c4-4d82-b16e-89ba7093be90.png" 
+  },
+  { name: "Janessa Yang Jiajing", id: "1006086", image: "https://images.unsplash.com/photo-1438761696357-5a69c17a67c6?q=80&w=1374&auto=format&fit=crop" },
   { name: "Tee Zhi Zhang", id: "1005136", image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop" },
   { name: "Ryan Pey Jun Hao", id: "1006048", image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1374&auto=format&fit=crop" },
 ];

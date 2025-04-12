@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Gamepad2, Trophy, Clock, Bot } from 'lucide-react';
 
@@ -21,8 +20,15 @@ const GameFeatures: React.FC<GameFeatureProps> = ({ isVisible }) => {
         </div>
         
         <div className="flex gap-6 items-start">
-          <div className="bg-snatch-purple/20 p-4 rounded-lg">
-            <Trophy className="text-snatch-yellow h-10 w-10" />
+          <div className="bg-snatch-purple/20 p-4 rounded-lg relative overflow-hidden">
+            <img 
+              src="/lovable-uploads/b00935a2-b9c7-43cf-b0a5-21fe4e4f8bd7.png" 
+              alt="Live Leaderboards" 
+              className="absolute inset-0 w-full h-full object-cover opacity-20 z-0"
+            />
+            <div className="relative z-10">
+              <Trophy className="text-snatch-yellow h-10 w-10" />
+            </div>
           </div>
           <div>
             <h3 className="text-snatch-yellow font-bold text-xl mb-2">Live Leaderboards</h3>

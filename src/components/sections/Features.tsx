@@ -94,7 +94,7 @@ const Features: React.FC = () => {
             <div className="bg-white/5 backdrop-blur-md rounded-xl border border-snatch-pink/20 overflow-hidden group hover:border-snatch-pink/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(236,72,153,0.2)]">
               <div className="h-48 relative overflow-hidden">
                 <img 
-                  src="https://imgur.com/8oIdKxm.jpg" 
+                  src="https://imgur.com/8oIdKxm.gif" 
                   alt="Skill Based Games" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -121,7 +121,7 @@ const Features: React.FC = () => {
             <div className="bg-white/5 backdrop-blur-md rounded-xl border border-snatch-pink/20 overflow-hidden group hover:border-snatch-pink/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(236,72,153,0.2)]">
               <div className="h-48 relative overflow-hidden">
                 <img 
-                  src="https://imgur.com/8oIdKxm.jpg" 
+                  src="https://imgur.com/OvIO2ik.gif" 
                   alt="Raffle Mode" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -148,7 +148,7 @@ const Features: React.FC = () => {
             <div className="bg-white/5 backdrop-blur-md rounded-xl border border-snatch-pink/20 overflow-hidden group hover:border-snatch-pink/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(236,72,153,0.2)]">
               <div className="h-48 relative overflow-hidden">
                 <img 
-                  src="https://imgur.com/TVDFpl3.jpg" 
+                  src="https://imgur.com/TVDFpl3.gif" 
                   alt="Host Chosen Mode" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />

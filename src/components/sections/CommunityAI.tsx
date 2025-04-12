@@ -1,10 +1,12 @@
 
 import React, { useRef, useState, useEffect } from 'react';
 import { Bot, ThumbsUp, Filter, Clock, Users } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const CommunityAI: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const isMobile = useIsMobile();
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -45,14 +47,14 @@ const CommunityAI: React.FC = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className={`transition-all duration-700 delay-200 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <div className="backdrop-blur-card p-6 h-full border border-snatch-pink/20 rounded-xl hover:border-snatch-pink/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(236,72,153,0.2)]">
               <div className="flex items-center gap-4 mb-6">
                 <div className="bg-snatch-purple/20 p-4 rounded-lg">
                   <Bot className="text-snatch-yellow h-10 w-10" />
                 </div>
-                <h3 className="text-snatch-yellow font-bold text-2xl">Automatic Shortlisting</h3>
+                <h3 className="text-snatch-yellow font-bold text-2xl">AI-Powered Community Management</h3>
               </div>
               
               <div className="space-y-4 mb-6">
@@ -81,31 +83,12 @@ const CommunityAI: React.FC = () => {
                 </ul>
               </div>
               
-              <div className="bg-white/5 p-4 rounded-lg border border-white/10">
-                <p className="text-white/70 italic text-sm">
-                  "The AI shortlisting feature saved us hours of manual work and helped us identify our most engaged users."
-                </p>
-                <p className="text-snatch-yellow text-sm mt-2">— Product Launch Manager</p>
-              </div>
-            </div>
-          </div>
-          
-          <div className={`transition-all duration-700 delay-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <div className="backdrop-blur-card p-6 h-full border border-snatch-pink/20 rounded-xl hover:border-snatch-pink/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(236,72,153,0.2)]">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="bg-snatch-purple/20 p-4 rounded-lg">
-                  <ThumbsUp className="text-snatch-yellow h-10 w-10" />
-                </div>
-                <h3 className="text-snatch-yellow font-bold text-2xl">Community Voting</h3>
-              </div>
-              
-              <div className="mb-6">
-                <div className="aspect-ratio-container mb-6">
-                  <img 
-                    src="/lovable-uploads/ee8d9fe5-15ca-4e42-a5d0-21bf1ca92109.png" 
-                    alt="Community voting interface" 
-                    className="rounded-lg shadow-lg w-full h-full object-cover"
-                  />
+              <div className="mt-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="bg-snatch-purple/20 p-4 rounded-lg">
+                    <ThumbsUp className="text-snatch-yellow h-10 w-10" />
+                  </div>
+                  <h3 className="text-snatch-yellow font-bold text-2xl">Community Voting</h3>
                 </div>
                 
                 <p className="text-white mb-4">
@@ -133,81 +116,96 @@ const CommunityAI: React.FC = () => {
                   </li>
                 </ul>
               </div>
+              
+              <div className="mt-8 bg-white/5 p-4 rounded-lg border border-white/10">
+                <p className="text-white/70 italic text-sm">
+                  "The AI shortlisting feature saved us hours of manual work and helped us identify our most engaged users."
+                </p>
+                <p className="text-snatch-yellow text-sm mt-2">— Product Launch Manager</p>
+              </div>
             </div>
           </div>
-        </div>
-        
-        <div className={`transition-all duration-700 delay-400 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-snatch-pink/20">
-            <h3 className="text-center text-snatch-pink font-fredoka text-2xl mb-6">Time Saved</h3>
-            
-            <div className="flex flex-wrap justify-center gap-6 md:gap-16 items-center">
-              <div className="text-center">
-                <div className="relative">
-                  <svg className="w-32 h-32" viewBox="0 0 36 36">
-                    <path
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                      fill="none"
-                      stroke="rgba(236, 72, 153, 0.2)"
-                      strokeWidth="3"
-                    />
-                    <path
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                      fill="none"
-                      stroke="#EC4899"
-                      strokeWidth="3"
-                      strokeDasharray="75, 100"
-                      className="animate-pulse"
-                    />
-                    <text x="18" y="21" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">75%</text>
-                  </svg>
-                  <p className="text-white mt-2">Review Time</p>
+          
+          <div className={`transition-all duration-700 delay-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            <div className="backdrop-blur-card p-6 h-full border border-snatch-pink/20 rounded-xl hover:border-snatch-pink/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(236,72,153,0.2)]">
+              {/* Floating phone mockup */}
+              <div className="relative mx-auto max-w-[320px] float-animation">
+                <div className="relative rounded-3xl overflow-hidden border-8 border-[#383838] shadow-2xl">
+                  <img 
+                    src="/lovable-uploads/057937c7-078d-42d8-9b1a-fb3f54ac9323.png" 
+                    alt="Snatch! Community AI Feature on mobile" 
+                    className="w-full h-auto"
+                    loading="eager"
+                  />
+                  
+                  {/* Subtle phone overlay including notch */}
+                  <div className="absolute top-0 left-0 right-0 h-6 bg-[#383838] rounded-t-lg flex justify-center items-center">
+                    <div className="w-24 h-4 bg-black rounded-b-xl"></div>
+                  </div>
+                </div>
+                
+                {/* Decorative elements */}
+                <div className="absolute -top-5 -right-5 bg-snatch-yellow text-snatch-darkpurple font-bold py-2 px-4 rounded-full transform rotate-12 shadow-xl text-sm">
+                  Save 75% Time!
+                </div>
+                
+                <div className="absolute -bottom-4 -left-4">
+                  <div className="bg-snatch-pink/10 p-3 rounded-full backdrop-blur-md border border-snatch-pink/20">
+                    <Bot className="text-snatch-pink animate-pulse" size={isMobile ? 20 : 24} />
+                  </div>
                 </div>
               </div>
               
-              <div className="text-center">
-                <div className="relative">
-                  <svg className="w-32 h-32" viewBox="0 0 36 36">
-                    <path
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                      fill="none"
-                      stroke="rgba(236, 72, 153, 0.2)"
-                      strokeWidth="3"
-                    />
-                    <path
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                      fill="none"
-                      stroke="#EC4899"
-                      strokeWidth="3"
-                      strokeDasharray="60, 100"
-                      className="animate-pulse"
-                    />
-                    <text x="18" y="21" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">60%</text>
-                  </svg>
-                  <p className="text-white mt-2">Selection Process</p>
-                </div>
-              </div>
-              
-              <div className="text-center">
-                <div className="relative">
-                  <svg className="w-32 h-32" viewBox="0 0 36 36">
-                    <path
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                      fill="none"
-                      stroke="rgba(236, 72, 153, 0.2)"
-                      strokeWidth="3"
-                    />
-                    <path
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                      fill="none"
-                      stroke="#EC4899"
-                      strokeWidth="3"
-                      strokeDasharray="90, 100"
-                      className="animate-pulse"
-                    />
-                    <text x="18" y="21" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">90%</text>
-                  </svg>
-                  <p className="text-white mt-2">Admin Overhead</p>
+              {/* Time saved metrics - below the phone */}
+              <div className="mt-16 bg-white/5 backdrop-blur-md rounded-xl p-6 border border-snatch-pink/20">
+                <h3 className="text-center text-snatch-pink font-fredoka text-xl mb-6">Time Saved with AI</h3>
+                
+                <div className="flex justify-center gap-8">
+                  <div className="text-center">
+                    <div className="relative">
+                      <svg className="w-24 h-24" viewBox="0 0 36 36">
+                        <path
+                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                          fill="none"
+                          stroke="rgba(236, 72, 153, 0.2)"
+                          strokeWidth="3"
+                        />
+                        <path
+                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                          fill="none"
+                          stroke="#EC4899"
+                          strokeWidth="3"
+                          strokeDasharray="75, 100"
+                          className="animate-pulse"
+                        />
+                        <text x="18" y="21" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold">75%</text>
+                      </svg>
+                      <p className="text-white text-sm mt-1">Review Time</p>
+                    </div>
+                  </div>
+                  
+                  <div className="text-center">
+                    <div className="relative">
+                      <svg className="w-24 h-24" viewBox="0 0 36 36">
+                        <path
+                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                          fill="none"
+                          stroke="rgba(236, 72, 153, 0.2)"
+                          strokeWidth="3"
+                        />
+                        <path
+                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                          fill="none"
+                          stroke="#EC4899"
+                          strokeWidth="3"
+                          strokeDasharray="90, 100"
+                          className="animate-pulse"
+                        />
+                        <text x="18" y="21" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold">90%</text>
+                      </svg>
+                      <p className="text-white text-sm mt-1">Admin Overhead</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

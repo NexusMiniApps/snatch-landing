@@ -1,4 +1,3 @@
-
 import React, { useRef, useState, useEffect } from 'react';
 import { Gamepad2, Trophy, Clock, Bot, PartyPopper, Medal, Ticket, UserRound } from 'lucide-react';
 
@@ -85,19 +84,19 @@ const Features: React.FC = () => {
           </div>
         </div>
         
-        {/* Game Modes Section */}
         <div className={`mt-16 mb-16 transition-all duration-700 delay-400 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <h3 className="text-center text-snatch-pink font-fredoka text-3xl mb-10">Game Modes</h3>
           
           <div className="grid md:grid-cols-3 gap-6">
-            {/* Skill Based Games */}
             <div className="bg-white/5 backdrop-blur-md rounded-xl border border-snatch-pink/20 overflow-hidden group hover:border-snatch-pink/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(236,72,153,0.2)]">
               <div className="h-48 relative overflow-hidden">
                 <img 
                   src="https://imgur.com/8oIdKxm.gif" 
                   alt="Skill Based Games" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="eager"
+                  autoPlay
+                  loop
+                  playsInline
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-snatch-darkpurple/90 via-snatch-darkpurple/40 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 w-full p-4">
@@ -118,14 +117,15 @@ const Features: React.FC = () => {
               </div>
             </div>
             
-            {/* Raffle Mode */}
             <div className="bg-white/5 backdrop-blur-md rounded-xl border border-snatch-pink/20 overflow-hidden group hover:border-snatch-pink/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(236,72,153,0.2)]">
               <div className="h-48 relative overflow-hidden">
                 <img 
                   src="https://imgur.com/OvIO2ik.gif" 
                   alt="Raffle Mode" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="eager"
+                  autoPlay
+                  loop
+                  playsInline
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-snatch-darkpurple/90 via-snatch-darkpurple/40 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 w-full p-4">
@@ -146,14 +146,15 @@ const Features: React.FC = () => {
               </div>
             </div>
             
-            {/* Host Chosen Mode */}
             <div className="bg-white/5 backdrop-blur-md rounded-xl border border-snatch-pink/20 overflow-hidden group hover:border-snatch-pink/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(236,72,153,0.2)]">
               <div className="h-48 relative overflow-hidden">
                 <img 
                   src="https://imgur.com/TVDFpl3.gif" 
                   alt="Host Chosen Mode" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="eager"
+                  autoPlay
+                  loop
+                  playsInline
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-snatch-darkpurple/90 via-snatch-darkpurple/40 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 w-full p-4">

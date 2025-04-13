@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -59,7 +58,7 @@ const VideoShowcase: React.FC = () => {
             <div className="relative aspect-w-16 aspect-h-9 w-full">
               <iframe
                 ref={videoRef}
-                src="https://www.youtube.com/embed/3ec1vSmtLKA?enablejsapi=1&controls=0&rel=0&showinfo=0"
+                src="https://www.youtube.com/embed/89rwLgGyVb0?enablejsapi=1&controls=0&rel=0&showinfo=0"
                 title="Snatch! Product Demo"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 className="w-full h-full rounded-xl"

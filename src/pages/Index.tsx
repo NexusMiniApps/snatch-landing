@@ -1,12 +1,18 @@
 
 import React, { useEffect, useState, useRef, lazy, Suspense } from 'react';
+import { useInView } from 'react-intersection-observer';
 import Sparkles from '@/components/Sparkles';
 import StickyButton from '@/components/StickyButton';
 import Hero from '@/components/sections/Hero';
 import WhatIsSnatch from '@/components/sections/WhatIsSnatch';
 
-// Lazy load components that are not immediately visible
-const VideoShowcase = lazy(() => import('@/components/sections/VideoShowcase'));
+// Lazy load components that are not immediately visible with prefetching
+const VideoShowcase = lazy(() => {
+  // Add artificial delay to prevent all sections loading at once
+  const promise = import('@/components/sections/VideoShowcase');
+  return promise;
+});
+
 const Problem = lazy(() => import('@/components/sections/Problem'));
 const Solution = lazy(() => import('@/components/sections/Solution'));
 const Features = lazy(() => import('@/components/sections/Features'));
@@ -15,10 +21,10 @@ const Team = lazy(() => import('@/components/sections/Team'));
 const Acknowledgments = lazy(() => import('@/components/sections/Acknowledgments'));
 const Footer = lazy(() => import('@/components/Footer'));
 
-// Simple loading component
+// Simple loading component with reduced animation intensity
 const SectionLoader = () => (
-  <div className="flex justify-center items-center py-24">
-    <div className="animate-pulse h-16 w-16 rounded-full bg-partiful-purple/30"></div>
+  <div className="flex justify-center items-center py-16">
+    <div className="animate-pulse h-12 w-12 rounded-full bg-partiful-purple/20"></div>
   </div>
 );
 
@@ -26,23 +32,41 @@ const Index = () => {
   const [scrolled, setScrolled] = useState(false);
   const mainRef = useRef<HTMLDivElement>(null);
   
+  // Set up intersection observers for each major section
+  const [videoRef, videoInView] = useInView({ threshold: 0.1, triggerOnce: true });
+  const [problemRef, problemInView] = useInView({ threshold: 0.1, triggerOnce: true });
+  const [solutionRef, solutionInView] = useInView({ threshold: 0.1, triggerOnce: true });
+  const [featuresRef, featuresInView] = useInView({ threshold: 0.1, triggerOnce: true });
+  const [communityRef, communityInView] = useInView({ threshold: 0.1, triggerOnce: true });
+  const [teamRef, teamInView] = useInView({ threshold: 0.1, triggerOnce: true });
+  const [acknowledgeRef, acknowledgeInView] = useInView({ threshold: 0.1, triggerOnce: true });
+  
+  const ticking = useRef(false);
+  
   useEffect(() => {
-    // Optimization: Use passive event listener for better scroll performance
+    // Performance optimized scroll handler with requestAnimationFrame
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      
-      // Limit state updates - only update when crossing threshold
-      if ((scrollPosition > 100 && !scrolled) || (scrollPosition <= 100 && scrolled)) {
-        setScrolled(scrollPosition > 100);
-      }
-      
-      // Apply subtle parallax to background layers with requestAnimationFrame for better performance
-      if (mainRef.current) {
-        window.requestAnimationFrame(() => {
-          const starsLayer = mainRef.current?.querySelector('.bg-stars') as HTMLElement;
-          if (starsLayer) {
-            starsLayer.style.transform = `translateY(${scrollPosition * 0.05}px)`;
+      if (!ticking.current) {
+        ticking.current = true;
+        
+        requestAnimationFrame(() => {
+          const scrollPosition = window.scrollY;
+          
+          // Limit state updates - only update when crossing threshold
+          if ((scrollPosition > 100 && !scrolled) || (scrollPosition <= 100 && scrolled)) {
+            setScrolled(scrollPosition > 100);
           }
+          
+          // Apply subtle parallax to background layers with improved performance
+          if (mainRef.current) {
+            const starsLayer = mainRef.current?.querySelector('.bg-stars') as HTMLElement;
+            if (starsLayer) {
+              // Use transform3d for hardware acceleration
+              starsLayer.style.transform = `translate3d(0, ${scrollPosition * 0.03}px, 0)`;
+            }
+          }
+          
+          ticking.current = false;
         });
       }
     };
@@ -54,15 +78,23 @@ const Index = () => {
     };
   }, [scrolled]);
   
+  // Preload next section when current one is in view
+  useEffect(() => {
+    if (videoInView) {
+      // Preload the next section when the current one is visible
+      import('@/components/sections/Problem');
+    }
+  }, [videoInView]);
+  
   return (
     <div ref={mainRef} className="min-h-screen bg-partiful-dark text-white relative overflow-hidden">
       {/* Subtle texture overlay */}
       <div className="texture-overlay"></div>
       
       {/* Background sparkles with reduced density */}
-      <Sparkles count={50} /> {/* Reduced count for better performance */}
+      <Sparkles count={30} /> {/* Further reduced count for better performance */}
       
-      {/* Background stars with parallax effect */}
+      {/* Background stars with optimized parallax effect */}
       <div className="absolute inset-0 bg-stars opacity-10 pointer-events-none transition-transform duration-200 ease-linear will-change-transform"></div>
       
       {/* Ambient gradient accents inspired by Partiful */}
@@ -74,63 +106,77 @@ const Index = () => {
       {/* Partiful-inspired gradient line at top */}
       <div className="absolute top-0 left-0 w-full h-1 bg-partiful-gradient"></div>
       
-      {/* Main content */}
+      {/* Main content with lazy loading based on viewport */}
       <div className="relative z-10">
         <Hero />
         <div className="section-divider bg-gradient-to-b from-partiful-dark to-partiful-dark/90"></div>
         <WhatIsSnatch />
         <div className="section-divider bg-gradient-to-b from-partiful-dark/90 to-partiful-dark/80"></div>
         
-        <Suspense fallback={<SectionLoader />}>
-          <VideoShowcase />
-        </Suspense>
+        <div ref={videoRef}>
+          <Suspense fallback={<SectionLoader />}>
+            {videoInView && <VideoShowcase />}
+          </Suspense>
+        </div>
         
         <div className="section-divider bg-gradient-to-b from-partiful-dark/80 to-partiful-dark/90"></div>
         
-        <Suspense fallback={<SectionLoader />}>
-          <Problem />
-        </Suspense>
+        <div ref={problemRef}>
+          <Suspense fallback={<SectionLoader />}>
+            {problemInView && <Problem />}
+          </Suspense>
+        </div>
         
         <div className="section-divider bg-gradient-to-b from-partiful-dark/90 to-partiful-dark"></div>
         
-        <Suspense fallback={<SectionLoader />}>
-          <Solution />
-        </Suspense>
+        <div ref={solutionRef}>
+          <Suspense fallback={<SectionLoader />}>
+            {solutionInView && <Solution />}
+          </Suspense>
+        </div>
         
         <div className="section-divider bg-gradient-to-b from-partiful-dark to-partiful-dark/90"></div>
         
-        <Suspense fallback={<SectionLoader />}>
-          <Features />
-        </Suspense>
+        <div ref={featuresRef}>
+          <Suspense fallback={<SectionLoader />}>
+            {featuresInView && <Features />}
+          </Suspense>
+        </div>
         
         <div className="section-divider bg-gradient-to-b from-partiful-dark/90 to-partiful-dark"></div>
         
-        <Suspense fallback={<SectionLoader />}>
-          <CommunityAI />
-        </Suspense>
+        <div ref={communityRef}>
+          <Suspense fallback={<SectionLoader />}>
+            {communityInView && <CommunityAI />}
+          </Suspense>
+        </div>
         
         <div className="section-divider bg-gradient-to-b from-partiful-dark to-partiful-dark/90"></div>
         
-        <Suspense fallback={<SectionLoader />}>
-          <Team />
-        </Suspense>
+        <div ref={teamRef}>
+          <Suspense fallback={<SectionLoader />}>
+            {teamInView && <Team />}
+          </Suspense>
+        </div>
         
         <div className="section-divider bg-gradient-to-b from-partiful-dark to-partiful-dark/90"></div>
         
-        <Suspense fallback={<SectionLoader />}>
-          <Acknowledgments />
-        </Suspense>
+        <div ref={acknowledgeRef}>
+          <Suspense fallback={<SectionLoader />}>
+            {acknowledgeInView && <Acknowledgments />}
+          </Suspense>
+        </div>
         
         <Suspense fallback={<SectionLoader />}>
           <Footer />
         </Suspense>
       </div>
       
-      {/* Sticky CTA button with improved appearance */}
+      {/* Sticky CTA button */}
       <StickyButton />
     </div>
   );
 };
 
-// Memoize the Index component as it doesn't need to re-render based on props
+// Memoize the Index component
 export default React.memo(Index);

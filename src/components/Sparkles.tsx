@@ -1,11 +1,16 @@
 
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState, useMemo, useCallback, useRef } from 'react';
 
 interface SparkleProps {
   count?: number;
 }
 
-const Sparkles: React.FC<SparkleProps> = ({ count = 50 }) => {
+const Sparkles: React.FC<SparkleProps> = ({ count = 30 }) => {
+  // Reduce default count from 50 to 30 for better performance
+  
+  // Use a ref to avoid recreating the interval on every render
+  const intervalRef = useRef<number | null>(null);
+  
   // Generate sparkles once using useMemo to avoid recreating on every render
   const initialSparkles = useMemo(() => 
     Array.from({ length: count }, (_, i) => ({
@@ -19,22 +24,30 @@ const Sparkles: React.FC<SparkleProps> = ({ count = 50 }) => {
   
   const [sparkles, setSparkles] = useState(initialSparkles);
   
-  useEffect(() => {
-    // Reposition sparkles every 15 seconds for a more subtle effect
-    // Use a longer interval for better performance
-    const intervalId = setInterval(() => {
-      setSparkles(prevSparkles => 
-        prevSparkles.map(sparkle => ({
-          ...sparkle,
-          top: `${Math.random() * 100}%`,
-          left: `${Math.random() * 100}%`,
-        }))
-      );
-    }, 20000); // Increased to 20 seconds for better performance
-    
-    return () => clearInterval(intervalId);
+  // Memoize the update function to prevent recreation on each render
+  const updateSparkles = useCallback(() => {
+    setSparkles(prevSparkles => 
+      prevSparkles.map(sparkle => ({
+        ...sparkle,
+        top: `${Math.random() * 100}%`,
+        left: `${Math.random() * 100}%`,
+      }))
+    );
   }, []);
   
+  useEffect(() => {
+    // Use a longer interval (30 seconds) to reduce CPU usage
+    intervalRef.current = window.setInterval(updateSparkles, 30000);
+    
+    return () => {
+      if (intervalRef.current !== null) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    };
+  }, [updateSparkles]);
+  
+  // Optimize rendering by rendering fewer sparkles at once
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
       {sparkles.map((sparkle) => (
@@ -49,6 +62,7 @@ const Sparkles: React.FC<SparkleProps> = ({ count = 50 }) => {
             opacity: sparkle.opacity,
             animationDelay: sparkle.delay,
             animationDuration: '4s',
+            contain: 'layout paint style', // Add CSS containment for rendering optimization
           }}
         />
       ))}

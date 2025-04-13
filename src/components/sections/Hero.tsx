@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { PartyPopper, Sparkles } from 'lucide-react';
 import CountdownTimer from '../CountdownTimer';
@@ -50,6 +49,24 @@ const Hero: React.FC = () => {
           <Sparkles className="text-snatch-darkpurple" size={isMobile ? 16 : 20} />
           <span>Try Snatch! Now</span>
         </a>
+      </div>
+      
+      <div className="mt-8 mx-auto max-w-2xl">
+        <div className="text-center">
+          <p className="text-white/90 font-nunito text-lg">
+            Watch this quick demo to see how Snatch! transforms product launches into unforgettable experiences
+          </p>
+          <div className="mt-4 inline-block bg-gradient-to-r from-partiful-lightblue via-partiful-pink to-partiful-purple p-[1px] rounded-full">
+            <a 
+              href="https://www.youtube.com/watch?v=89rwLgGyVb0" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-snatch-darkpurple hover:bg-snatch-darkpurple/80 text-white py-2 px-5 rounded-full block transition-colors duration-300"
+            >
+              Watch Full Video
+            </a>
+          </div>
+        </div>
       </div>
       
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">

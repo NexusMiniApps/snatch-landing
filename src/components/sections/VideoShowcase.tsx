@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
+
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -10,6 +11,7 @@ const VideoShowcase: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
   
+  // Use IntersectionObserver with useCallback to avoid recreation on every render
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -18,7 +20,7 @@ const VideoShowcase: React.FC = () => {
           observer.disconnect();
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.2, rootMargin: "100px" }
     );
     
     if (sectionRef.current) {
@@ -28,6 +30,15 @@ const VideoShowcase: React.FC = () => {
     return () => {
       observer.disconnect();
     };
+  }, []);
+
+  // Memoize event handlers to prevent unnecessary re-renders
+  const handleMuteToggle = useCallback(() => {
+    setIsMuted(prev => !prev);
+  }, []);
+  
+  const handlePlayToggle = useCallback(() => {
+    setIsPlaying(prev => !prev);
   }, []);
 
   // Background images for decorative purposes
@@ -43,7 +54,7 @@ const VideoShowcase: React.FC = () => {
       
       {/* Decorative background elements */}
       <div className="absolute top-1/4 right-0 w-32 h-32 md:w-48 md:h-48 rounded-full opacity-10 overflow-hidden">
-        <img src={bgImage1} alt="" className="w-full h-full object-cover" />
+        <img src={bgImage1} alt="" className="w-full h-full object-cover" loading="lazy" />
       </div>
       
       <div className="container mx-auto max-w-5xl">
@@ -75,14 +86,14 @@ const VideoShowcase: React.FC = () => {
               
               <div className="absolute bottom-6 right-6 z-10 flex gap-3">
                 <button 
-                  onClick={() => setIsMuted(!isMuted)}
+                  onClick={handleMuteToggle}
                   className="bg-partiful-dark/80 backdrop-blur-sm text-white p-2 rounded-full hover:bg-partiful-purple/80 transition-all duration-300"
                 >
                   {isMuted ? <VolumeX size={isMobile ? 16 : 20} /> : <Volume2 size={isMobile ? 16 : 20} />}
                 </button>
                 
                 <button 
-                  onClick={() => setIsPlaying(!isPlaying)}
+                  onClick={handlePlayToggle}
                   className="bg-partiful-dark/80 backdrop-blur-sm text-white p-2 rounded-full hover:bg-partiful-purple/80 transition-all duration-300"
                 >
                   {isPlaying ? <Pause size={isMobile ? 16 : 20} /> : <Play size={isMobile ? 16 : 20} />}
@@ -98,7 +109,7 @@ const VideoShowcase: React.FC = () => {
               </p>
               <div className="mt-4 inline-block bg-gradient-to-r from-partiful-lightblue via-partiful-pink to-partiful-purple p-[1px] rounded-full">
                 <a 
-                  href="https://www.youtube.com/watch?v=3ec1vSmtLKA" 
+                  href="https://www.youtube.com/watch?v=89rwLgGyVb0" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-snatch-darkpurple hover:bg-snatch-darkpurple/80 text-white py-2 px-5 rounded-full block transition-colors duration-300"
@@ -118,4 +129,5 @@ const VideoShowcase: React.FC = () => {
   );
 };
 
-export default VideoShowcase;
+// Memoize the component to prevent unnecessary re-renders
+export default React.memo(VideoShowcase);

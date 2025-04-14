@@ -29,7 +29,8 @@ const GameModes: React.FC<GameModesProps> = ({ isVisible }) => {
           description="Everyone gets a fair chance to win with our digital raffle system. More participation means more chances!"
           tag="Luck based"
           badge="Inclusive"
-          gifUrl="https://i.imgur.com/OvIO2ik.gif"
+          gifUrl="https://i.imgur.com/LtXYGLM.gif" // Updated to use a GIF from the Imgur album
+          isImgurEmbed={true}
         />
         
         <GameModeCard 
@@ -52,9 +53,18 @@ interface GameModeCardProps {
   tag: string;
   badge: string;
   gifUrl: string;
+  isImgurEmbed?: boolean;
 }
 
-const GameModeCard: React.FC<GameModeCardProps> = ({ title, icon, description, tag, badge, gifUrl }) => {
+const GameModeCard: React.FC<GameModeCardProps> = ({ 
+  title, 
+  icon, 
+  description, 
+  tag, 
+  badge, 
+  gifUrl,
+  isImgurEmbed = false
+}) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
   
@@ -68,20 +78,34 @@ const GameModeCard: React.FC<GameModeCardProps> = ({ title, icon, description, t
             </div>
           )}
           
-          <img 
-            src={gifUrl}
-            alt={`${title} Game Mode`}
-            className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${isLoaded && !hasError ? 'opacity-100' : 'opacity-0'}`}
-            onLoad={() => {
-              console.log(`GIF loaded successfully: ${gifUrl}`);
-              setIsLoaded(true);
-            }}
-            onError={() => {
-              console.error(`Failed to load GIF: ${gifUrl}`);
-              setHasError(true);
-              setIsLoaded(false);
-            }}
-          />
+          {isImgurEmbed ? (
+            <iframe 
+              className="w-full h-full object-cover"
+              src={`${gifUrl.replace('.gif', '')}/embed?pub=true&w=540`}
+              allowFullScreen
+              onLoad={() => setIsLoaded(true)}
+              onError={() => {
+                console.error(`Failed to load Imgur embed: ${gifUrl}`);
+                setHasError(true);
+                setIsLoaded(false);
+              }}
+            />
+          ) : (
+            <img 
+              src={gifUrl}
+              alt={`${title} Game Mode`}
+              className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${isLoaded && !hasError ? 'opacity-100' : 'opacity-0'}`}
+              onLoad={() => {
+                console.log(`GIF loaded successfully: ${gifUrl}`);
+                setIsLoaded(true);
+              }}
+              onError={() => {
+                console.error(`Failed to load GIF: ${gifUrl}`);
+                setHasError(true);
+                setIsLoaded(false);
+              }}
+            />
+          )}
           
           {hasError && (
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-snatch-darkpurple/50 text-snatch-pink">

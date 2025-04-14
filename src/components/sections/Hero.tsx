@@ -41,17 +41,15 @@ const Hero: React.FC = () => {
         
         <a 
           id="cta"
-          href="http://snatch.events/" 
+          href="https://snatch.events" 
           target="_blank"
           rel="noopener noreferrer"
           className="btn-cta inline-flex items-center gap-2 glow-effect"
         >
           <Sparkles className="text-snatch-darkpurple" size={isMobile ? 16 : 20} />
-          <span>Try Snatch! Now</span>
+          <span>Join the Party Now!</span>
         </a>
       </div>
-      
-      
       
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
         <a href="#what-is-snatch" className="text-white opacity-70 hover:opacity-100 transition-opacity">
@@ -61,7 +59,6 @@ const Hero: React.FC = () => {
         </a>
       </div>
       
-      {/* Partiful-inspired subtle floating elements */}
       <div className="absolute top-1/4 left-1/5 opacity-10 animate-pulse hidden md:block">
         <Sparkles size={24} className="text-partiful-blue" />
       </div>

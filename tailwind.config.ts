@@ -182,6 +182,14 @@ export default {
 					'60%, 100%': {
 						transform: 'translate(100%, 100%)'
 					}
+				},
+				'bottom-up': {
+					'0%': {
+						transform: 'translateY(100%)'
+					},
+					'100%': {
+						transform: 'translateY(-100%)'
+					}
 				}
 			},
 			animation: {
@@ -196,6 +204,7 @@ export default {
 				'float-slow': 'float-slow 6s ease-in-out infinite',
 				'shimmer': 'shimmer 2.5s ease-in-out infinite',
 				'diagonal-shimmer': 'diagonal-shimmer 2.5s ease-in-out infinite',
+				'bottom-up': 'bottom-up 2.5s ease-in-out infinite',
 			},
 			backgroundImage: {
 				'gradient-party': 'linear-gradient(135deg, #1E1B4B, #3B0764)',

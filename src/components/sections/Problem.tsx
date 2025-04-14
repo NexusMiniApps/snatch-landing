@@ -1,4 +1,3 @@
-
 import React, { useRef, useState, useEffect } from 'react';
 import { Zap, Award, Heart, Star, Sparkles } from 'lucide-react';
 
@@ -32,14 +31,10 @@ const Problem: React.FC = () => {
       ref={sectionRef}
       className="relative py-20 px-4 bg-gradient-to-b from-snatch-darkpurple/50 to-snatch-darkblue/50 backdrop-blur-sm overflow-hidden"
     >
-      {/* Decorative elements without image backgrounds */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
         <div className="absolute -top-20 -left-20 w-40 h-40 rounded-full bg-partiful-purple/10 blur-3xl animate-float-slow"></div>
         <div className="absolute top-40 -right-20 w-60 h-60 rounded-full bg-snatch-pink/10 blur-3xl animate-float-slow animation-delay-1000"></div>
         
-        {/* Removed the abstract image patterns */}
-        
-        {/* Subtle floating particles */}
         <div className="absolute bottom-20 left-1/4 w-2 h-2 rounded-full bg-snatch-yellow/40 animate-pulse-scale"></div>
         <div className="absolute top-40 left-3/4 w-3 h-3 rounded-full bg-partiful-purple/30 animate-pulse-scale animation-delay-700"></div>
         <div className="absolute bottom-40 right-1/4 w-2 h-2 rounded-full bg-snatch-pink/40 animate-pulse-scale animation-delay-1500"></div>
@@ -59,9 +54,6 @@ const Problem: React.FC = () => {
         </div>
         
         <div className={`bg-white/5 backdrop-blur-md p-8 rounded-xl border border-snatch-pink/20 shadow-glow-pink transition-all duration-500 relative overflow-hidden group ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-          {/* Removed the background image pattern */}
-          
-          {/* Subtle gradient overlay that animates on hover */}
           <div className="absolute inset-0 bg-gradient-to-r from-partiful-purple/5 via-snatch-pink/5 to-partiful-purple/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0"></div>
           
           <div className="flex justify-center gap-16 lg:gap-24 text-white mb-12 relative z-10">
@@ -93,7 +85,7 @@ const Problem: React.FC = () => {
               </div>
               <div className="h-20 w-full bg-snatch-pink/20 relative rounded-t-md overflow-hidden group-hover:h-24 transition-all duration-500">
                 <div className="absolute inset-0 bg-gradient-to-t from-snatch-pink/30 to-partiful-purple/30 opacity-70"></div>
-                <div className="absolute inset-0 animate-diagonal-shimmer bg-white/20 -translate-x-full -translate-y-full"></div>
+                <div className="absolute inset-0 animate-bottom-up bg-white/20 -translate-y-full"></div>
               </div>
             </div>
             <div className="flex-1 max-w-[200px] flex flex-col items-center">
@@ -103,7 +95,7 @@ const Problem: React.FC = () => {
               </div>
               <div className="h-32 w-full bg-snatch-pink/20 relative rounded-t-md overflow-hidden group-hover:h-36 transition-all duration-500">
                 <div className="absolute inset-0 bg-gradient-to-t from-snatch-pink/30 to-partiful-purple/30 opacity-70"></div>
-                <div className="absolute inset-0 animate-diagonal-shimmer bg-white/20 -translate-x-full -translate-y-full"></div>
+                <div className="absolute inset-0 animate-bottom-up bg-white/20 -translate-y-full"></div>
               </div>
             </div>
             <div className="flex-1 max-w-[200px] flex flex-col items-center">
@@ -113,7 +105,7 @@ const Problem: React.FC = () => {
               </div>
               <div className="h-16 w-full bg-snatch-pink/20 relative rounded-t-md overflow-hidden group-hover:h-20 transition-all duration-500">
                 <div className="absolute inset-0 bg-gradient-to-t from-snatch-pink/30 to-partiful-purple/30 opacity-70"></div>
-                <div className="absolute inset-0 animate-diagonal-shimmer bg-white/20 -translate-x-full -translate-y-full"></div>
+                <div className="absolute inset-0 animate-bottom-up bg-white/20 -translate-y-full"></div>
               </div>
             </div>
           </div>
@@ -156,4 +148,3 @@ const Problem: React.FC = () => {
 };
 
 export default Problem;
-

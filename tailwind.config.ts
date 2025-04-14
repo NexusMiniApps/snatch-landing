@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -175,6 +174,14 @@ export default {
 					'100%': {
 						transform: 'translateX(100%)'
 					}
+				},
+				'diagonal-shimmer': {
+					'0%': {
+						transform: 'translate(-100%, -100%)'
+					},
+					'60%, 100%': {
+						transform: 'translate(100%, 100%)'
+					}
 				}
 			},
 			animation: {
@@ -188,6 +195,7 @@ export default {
 				'ping-slow': 'ping-slow 3s ease-in-out infinite',
 				'float-slow': 'float-slow 6s ease-in-out infinite',
 				'shimmer': 'shimmer 2.5s ease-in-out infinite',
+				'diagonal-shimmer': 'diagonal-shimmer 2.5s ease-in-out infinite',
 			},
 			backgroundImage: {
 				'gradient-party': 'linear-gradient(135deg, #1E1B4B, #3B0764)',

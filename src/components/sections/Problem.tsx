@@ -93,7 +93,7 @@ const Problem: React.FC = () => {
               </div>
               <div className="h-20 w-full bg-snatch-pink/20 relative rounded-t-md overflow-hidden group-hover:h-24 transition-all duration-500">
                 <div className="absolute inset-0 bg-gradient-to-t from-snatch-pink/30 to-partiful-purple/30 opacity-70"></div>
-                <div className="absolute inset-0 animate-shimmer bg-white/20 -translate-x-full"></div>
+                <div className="absolute inset-0 animate-diagonal-shimmer bg-white/20 -translate-x-full -translate-y-full"></div>
               </div>
             </div>
             <div className="flex-1 max-w-[200px] flex flex-col items-center">
@@ -103,7 +103,7 @@ const Problem: React.FC = () => {
               </div>
               <div className="h-32 w-full bg-snatch-pink/20 relative rounded-t-md overflow-hidden group-hover:h-36 transition-all duration-500">
                 <div className="absolute inset-0 bg-gradient-to-t from-snatch-pink/30 to-partiful-purple/30 opacity-70"></div>
-                <div className="absolute inset-0 animate-shimmer bg-white/20 -translate-x-full"></div>
+                <div className="absolute inset-0 animate-diagonal-shimmer bg-white/20 -translate-x-full -translate-y-full"></div>
               </div>
             </div>
             <div className="flex-1 max-w-[200px] flex flex-col items-center">
@@ -113,7 +113,7 @@ const Problem: React.FC = () => {
               </div>
               <div className="h-16 w-full bg-snatch-pink/20 relative rounded-t-md overflow-hidden group-hover:h-20 transition-all duration-500">
                 <div className="absolute inset-0 bg-gradient-to-t from-snatch-pink/30 to-partiful-purple/30 opacity-70"></div>
-                <div className="absolute inset-0 animate-shimmer bg-white/20 -translate-x-full"></div>
+                <div className="absolute inset-0 animate-diagonal-shimmer bg-white/20 -translate-x-full -translate-y-full"></div>
               </div>
             </div>
           </div>
@@ -156,3 +156,4 @@ const Problem: React.FC = () => {
 };
 
 export default Problem;
+

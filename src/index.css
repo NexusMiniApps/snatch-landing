@@ -256,6 +256,15 @@
   }
 }
 
+@keyframes diagonal-shimmer {
+  0% {
+    transform: translate(-100%, -100%);
+  }
+  60%, 100% {
+    transform: translate(100%, 100%);
+  }
+}
+
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -291,6 +300,10 @@
 
 .animate-ping-slow {
   animation: ping-slow 3s ease-in-out infinite;
+}
+
+.animate-diagonal-shimmer {
+  animation: diagonal-shimmer 2.5s ease-in-out infinite;
 }
 
 ::-webkit-scrollbar {

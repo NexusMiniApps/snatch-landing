@@ -20,7 +20,7 @@ const GameModes: React.FC<GameModesProps> = ({ isVisible }) => {
           description="Test your reflexes and knowledge with fast-paced gaming challenges that reward the quickest and smartest players."
           tag="Most competitive"
           badge="High Engagement"
-          gifUrl="https://i.imgur.com/8oIdKxm.gif"
+          gifUrl="/lovable-uploads/skillbased.gif"
         />
         
         <GameModeCard 
@@ -137,3 +137,4 @@ const GameModeCard: React.FC<GameModeCardProps> = ({
 };
 
 export default GameModes;
+

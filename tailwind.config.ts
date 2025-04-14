@@ -175,6 +175,14 @@ export default {
 					'100%': {
 						transform: 'translateX(100%)'
 					}
+				},
+				'diagonal-move': {
+					'0%': {
+						transform: 'translate(0, 0)'
+					},
+					'100%': {
+						transform: 'translate(10px, 10px)'
+					}
 				}
 			},
 			animation: {
@@ -188,6 +196,7 @@ export default {
 				'ping-slow': 'ping-slow 3s ease-in-out infinite',
 				'float-slow': 'float-slow 6s ease-in-out infinite',
 				'shimmer': 'shimmer 2.5s ease-in-out infinite',
+				'diagonal': 'diagonal-move 0.3s ease-out forwards',
 			},
 			backgroundImage: {
 				'gradient-party': 'linear-gradient(135deg, #1E1B4B, #3B0764)',

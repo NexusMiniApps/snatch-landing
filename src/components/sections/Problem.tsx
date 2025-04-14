@@ -37,8 +37,6 @@ const Problem: React.FC = () => {
         <div className="absolute -top-20 -left-20 w-40 h-40 rounded-full bg-partiful-purple/10 blur-3xl animate-float-slow"></div>
         <div className="absolute top-40 -right-20 w-60 h-60 rounded-full bg-snatch-pink/10 blur-3xl animate-float-slow animation-delay-1000"></div>
         
-        {/* Removed the abstract image patterns */}
-        
         {/* Subtle floating particles */}
         <div className="absolute bottom-20 left-1/4 w-2 h-2 rounded-full bg-snatch-yellow/40 animate-pulse-scale"></div>
         <div className="absolute top-40 left-3/4 w-3 h-3 rounded-full bg-partiful-purple/30 animate-pulse-scale animation-delay-700"></div>
@@ -59,8 +57,6 @@ const Problem: React.FC = () => {
         </div>
         
         <div className={`bg-white/5 backdrop-blur-md p-8 rounded-xl border border-snatch-pink/20 shadow-glow-pink transition-all duration-500 relative overflow-hidden group ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-          {/* Removed the background image pattern */}
-          
           {/* Subtle gradient overlay that animates on hover */}
           <div className="absolute inset-0 bg-gradient-to-r from-partiful-purple/5 via-snatch-pink/5 to-partiful-purple/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0"></div>
           
@@ -134,7 +130,7 @@ const Problem: React.FC = () => {
                 "No real connection with customers",
                 "Boring, forgettable experiences"
               ].map((problem, index) => (
-                <li key={index} className="flex items-start gap-3 hover:translate-x-1 transition-transform group">
+                <li key={index} className="flex items-start gap-3 hover:translate-x-1 hover:translate-y-1 transition-transform group">
                   <div className="text-snatch-pink font-bold text-xl w-6 h-6 flex items-center justify-center group-hover:scale-110 transition-transform relative">
                     <span className="absolute">✘</span>
                     <Sparkles className="absolute text-snatch-pink/20 opacity-0 group-hover:opacity-100 transition-opacity" size={16} />
@@ -143,7 +139,7 @@ const Problem: React.FC = () => {
                 </li>
               ))}
               
-              <li className="flex items-start gap-3 mt-8 bg-gradient-to-r from-white/5 via-snatch-yellow/5 to-white/5 p-3 rounded-lg border border-snatch-yellow/20 transition-all duration-300 hover:bg-white/10 hover:border-snatch-yellow/50 hover:shadow-[0_0_15px_rgba(253,224,71,0.2)]">
+              <li className="flex items-start gap-3 mt-8 bg-gradient-to-r from-white/5 via-snatch-yellow/5 to-white/5 p-3 rounded-lg border border-snatch-yellow/20 transition-all duration-300 hover:bg-white/10 hover:border-snatch-yellow/50 hover:translate-x-1 hover:translate-y-1 hover:shadow-[0_0_15px_rgba(253,224,71,0.2)]">
                 <span className="text-snatch-yellow font-bold text-xl animate-pulse-scale">✓</span>
                 <span className="text-snatch-yellow font-bold">Snatch! solves all of these!</span>
               </li>

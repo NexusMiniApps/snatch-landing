@@ -68,7 +68,7 @@ const GameModeCard: React.FC<GameModeCardProps> = ({
   const [hasError, setHasError] = useState(false);
   
   return (
-    <div className="bg-white/5 backdrop-blur-md rounded-xl border border-snatch-pink/20 overflow-hidden group hover:border-snatch-pink/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(236,72,153,0.2)]">
+    <div className="bg-white/5 backdrop-blur-md rounded-xl border border-snatch-pink/20 overflow-hidden group hover:border-snatch-pink/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(236,72,153,0.2)] hover:translate-x-1 hover:translate-y-1">
       <div className="h-48 relative overflow-hidden">
         <AspectRatio ratio={16/9} className="w-full h-full">
           {!isLoaded && !hasError && (
@@ -137,4 +137,3 @@ const GameModeCard: React.FC<GameModeCardProps> = ({
 };
 
 export default GameModes;
-

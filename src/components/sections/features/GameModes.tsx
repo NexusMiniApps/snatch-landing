@@ -29,7 +29,7 @@ const GameModes: React.FC<GameModesProps> = ({ isVisible }) => {
           description="Everyone gets a fair chance to win with our digital raffle system. More participation means more chances!"
           tag="Luck based"
           badge="Inclusive"
-          gifUrl="https://i.imgur.com/LtXYGLM.gif" // Updated to use a GIF from the Imgur album
+          gifUrl="https://imgur.com/aPpgxT6"
           isImgurEmbed={true}
         />
         
@@ -81,9 +81,12 @@ const GameModeCard: React.FC<GameModeCardProps> = ({
           {isImgurEmbed ? (
             <iframe 
               className="w-full h-full object-cover"
-              src={`${gifUrl.replace('.gif', '')}/embed?pub=true&w=540`}
+              src={`https://imgur.com/${gifUrl.replace('https://imgur.com/', '')}/embed?pub=true`}
               allowFullScreen
-              onLoad={() => setIsLoaded(true)}
+              onLoad={() => {
+                console.log(`Imgur embed loaded successfully: ${gifUrl}`);
+                setIsLoaded(true);
+              }}
               onError={() => {
                 console.error(`Failed to load Imgur embed: ${gifUrl}`);
                 setHasError(true);

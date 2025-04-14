@@ -293,19 +293,6 @@
   animation: ping-slow 3s ease-in-out infinite;
 }
 
-@keyframes diagonal-move {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(10px, 10px);
-  }
-}
-
-.animate-diagonal {
-  animation: diagonal-move 0.3s ease-out forwards;
-}
-
 ::-webkit-scrollbar {
   width: 8px;
 }

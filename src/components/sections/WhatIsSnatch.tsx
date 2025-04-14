@@ -50,7 +50,7 @@ const WhatIsSnatch: React.FC = () => {
               We mix games, prizes, and a dash of urgency to make your brand the talk of the town.
             </p>
             
-            <div className="mt-10 flex items-center gap-4 float-animation hover:translate-x-1 hover:translate-y-1 transition-transform">
+            <div className="mt-10 flex items-center gap-4 float-animation">
               <div className="bg-snatch-pink/10 p-3 rounded-full">
                 <PartyPopper size={30} className="text-snatch-pink" />
               </div>
@@ -59,7 +59,7 @@ const WhatIsSnatch: React.FC = () => {
           </div>
           
           <div className={`relative transition-all duration-700 delay-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <div className="relative rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(236,72,153,0.3)] border border-snatch-pink/30 hover:shadow-[0_0_60px_rgba(236,72,153,0.4)] hover:translate-x-1 hover:translate-y-1 transition-all duration-500">
+            <div className="relative rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(236,72,153,0.3)] border border-snatch-pink/30 hover:shadow-[0_0_60px_rgba(236,72,153,0.4)] transition-all duration-500">
               <img 
                 src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1470&auto=format&fit=crop" 
                 alt="Exciting product launch event"
@@ -76,7 +76,7 @@ const WhatIsSnatch: React.FC = () => {
               </div>
             </div>
             
-            <div className="absolute -top-5 -right-5 bg-snatch-yellow text-snatch-darkpurple font-bold py-3 px-6 rounded-full transform rotate-12 shadow-xl animate-bounce-subtle hover:translate-x-1 hover:translate-y-1 transition-transform">
+            <div className="absolute -top-5 -right-5 bg-snatch-yellow text-snatch-darkpurple font-bold py-3 px-6 rounded-full transform rotate-12 shadow-xl animate-bounce-subtle">
               88% More Fun!
             </div>
           </div>

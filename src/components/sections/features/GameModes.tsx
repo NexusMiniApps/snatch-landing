@@ -29,8 +29,7 @@ const GameModes: React.FC<GameModesProps> = ({ isVisible }) => {
           description="Everyone gets a fair chance to win with our digital raffle system. More participation means more chances!"
           tag="Luck based"
           badge="Inclusive"
-          gifUrl="https://imgur.com/aPpgxT6"
-          isImgurEmbed={true}
+          gifUrl="/lovable-uploads/giveaway-gif.gif"
         />
         
         <GameModeCard 
